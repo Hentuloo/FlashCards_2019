@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.6",
     "eslint-config-prettier": "^5.0.0",
     "husky": "^2.4.1",
     "lint-staged": "^8.2.1",

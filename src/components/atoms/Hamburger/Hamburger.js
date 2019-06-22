@@ -1,29 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
+import classNames from 'classnames';
 import './_Hamburger.scss';
+import PropTypes from 'prop-types';
 
-class Hamburger extends Component {
-  state = {
-    active: false,
-  };
+const Hamburger = props => {
+  const { className, onClick } = props;
+  const textClasses = classNames('menu__hamburger', className);
+  return (
+    <div
+      onClick={onClick}
+      onKeyDown={onClick}
+      tabIndex="0"
+      role="button"
+      className={textClasses}
+    />
+  );
+};
 
-  handleClick = () => {
-    this.setState(prevState => {
-      return { active: !prevState.active };
-    });
-  };
-
-  render() {
-    const { active } = this.state;
-    return (
-      <div
-        className={active ? 'hamburger active' : 'hamburger'}
-        onClick={this.handleClick}
-        onKeyDown={this.handleClick}
-        tabIndex="0"
-        role="button"
-      />
-    );
-  }
-}
+Hamburger.propTypes = {
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+};
+Hamburger.defaultProps = {
+  className: '',
+  onClick: null,
+};
 
 export default Hamburger;
