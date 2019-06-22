@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const Buttons = props => {
+const MenuButton = props => {
   const { className, value, onClick, icon } = props;
   const propClasses = classNames('menu__button', className);
 
@@ -13,16 +13,16 @@ const Buttons = props => {
     </button>
   );
 };
-Buttons.propTypes = {
+MenuButton.propTypes = {
   className: PropTypes.string,
   value: PropTypes.string,
   onClick: PropTypes.func,
   icon: PropTypes.string,
 };
-Buttons.defaultProps = {
+MenuButton.defaultProps = {
   className: '',
   value: 'Przycisk',
   onClick: null,
   icon: null,
 };
-export default Buttons;
+export default MenuButton;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Hamburger from 'components/atoms/Hamburger/Hamburger';
-import Button from 'components/atoms/Buttons/Buttons';
+import MenuButton from 'components/atoms/MenuButton/MenuButton';
 import MenuAddType from 'components/molecules/MenuAddType/MenuAddType';
 
 class Menu extends Component {
@@ -93,17 +93,17 @@ class Menu extends Component {
           )}
         </div>
         <div className="menu__buttons">
-          <Button
+          <MenuButton
             icon="icon-plus"
             value="dodaj typ fiszek"
             onClick={this.handleClickButtonAdd}
           />
-          <Button
+          <MenuButton
             icon="icon-minus"
             value="usuń typ fiszek"
             onClick={this.handleClickButtonDelete}
           />
-          <Button
+          <MenuButton
             icon="icon-cog"
             value="zmodyfikuj typ fiszek"
             onClick={this.handleClickButtonChange}

@@ -6,7 +6,7 @@ const MainLayout = ({ children }) => {
   return (
     <>
       <Menu />
-      <div>Content{children}</div>
+      <div>{children}</div>
     </>
   );
 };
