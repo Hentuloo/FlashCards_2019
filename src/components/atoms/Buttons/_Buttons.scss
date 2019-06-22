@@ -1,8 +1,16 @@
 .menu__button {
-    min-width: 60px;
-    min-height: 60px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     padding: 0px;
-    font-size: 60px;
+    font-size: $font-xl;
     line-height: 30px;
+    color: $green-third;
+    background-color: $white;
+    border: none;
+    text-align: center;
+
+    span {
+        display: none;
+    }
 }

@@ -1,39 +1,117 @@
 import React, { Component } from 'react';
 import Hamburger from 'components/atoms/Hamburger/Hamburger';
 import Button from 'components/atoms/Buttons/Buttons';
+import MenuAddType from 'components/molecules/MenuAddType/MenuAddType';
 
 class Menu extends Component {
   state = {
-    activeHamburger: false,
+    HamburgerActive: false,
+    ButtonDelete: false,
+    ButtonAdd: false,
+    ButtonChange: false,
   };
 
-  handleClick = () => {
-    console.log('sd');
+  handleClickHamburger = () => {
     this.setState(prevState => {
-      return { activeHamburger: !prevState.activeHamburger };
+      return {
+        HamburgerActive: !prevState.HamburgerActive,
+        ButtonDelete: false,
+        ButtonAdd: false,
+        ButtonChange: false,
+      };
+    });
+  };
+
+  handleClickButtonDelete = () => {
+    this.setState(prevState => {
+      return {
+        ButtonDelete: !prevState.ButtonDelete,
+        HamburgerActive: false,
+        ButtonAdd: false,
+        ButtonChange: false,
+      };
+    });
+  };
+
+  handleClickButtonAdd = () => {
+    this.setState(prevState => {
+      return {
+        ButtonAdd: !prevState.ButtonAdd,
+        HamburgerActive: false,
+        ButtonDelete: false,
+        ButtonChange: false,
+      };
+    });
+  };
+
+  handleClickButtonChange = () => {
+    this.setState(prevState => {
+      return {
+        ButtonChange: !prevState.ButtonChange,
+        ButtonAdd: false,
+        HamburgerActive: false,
+        ButtonDelete: false,
+      };
     });
   };
 
   render() {
-    const { activeHamburger } = this.state;
+    const {
+      HamburgerActive,
+      ButtonDelete,
+      ButtonAdd,
+      ButtonChange,
+    } = this.state;
     return (
       <div className="menu">
-        <nav
-          className={
-            activeHamburger ? 'menu__list menu__list--active' : 'menu__list'
-          }
-        >
-          <li>Strona 1</li>
-          <li>Strona 2</li>
-          <li>Strondda 3</li>
-          <li>Strona 4</li>
-        </nav>
-        <div>
-          <Button value="&#43;" />
+        <div className="menu__panel">
+          <nav
+            className={
+              HamburgerActive ? 'menu__list menu__list--active' : 'menu__list'
+            }
+          >
+            <li>
+              <a href="#prem">Kup premke</a>
+            </li>
+            <li>
+              <a href="#sett">Ustawienia</a>
+            </li>
+            <li>
+              <a href="#logout">Wyloguj</a>
+            </li>
+          </nav>
+          {ButtonAdd && <MenuAddType />}
+          {ButtonDelete && (
+            <div className="menu__statment">
+              Kliknij typ aby go wybrać do usunięcia
+            </div>
+          )}
+          {ButtonChange && (
+            <div className="menu__statment">
+              Kliknij typ aby go wybrać do modyfikacji
+            </div>
+          )}
+        </div>
+        <div className="menu__buttons">
+          <Button
+            icon="icon-plus"
+            value="dodaj typ fiszek"
+            onClick={this.handleClickButtonAdd}
+          />
+          <Button
+            icon="icon-minus"
+            value="usuń typ fiszek"
+            onClick={this.handleClickButtonDelete}
+          />
+          <Button
+            icon="icon-cog"
+            value="zmodyfikuj typ fiszek"
+            onClick={this.handleClickButtonChange}
+          />
         </div>
         <Hamburger
-          onClick={this.handleClick}
-          className={activeHamburger ? 'menu__hamburger--active' : ''}
+          onClick={this.handleClickHamburger}
+          className={HamburgerActive ? 'menu__hamburger--active' : ''}
         />
       </div>
     );
