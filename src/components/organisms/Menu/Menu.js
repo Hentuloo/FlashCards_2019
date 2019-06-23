@@ -80,7 +80,7 @@ class Menu extends Component {
               <a href="#logout">Wyloguj</a>
             </li>
           </nav>
-          {ButtonAdd && <MenuAddType />}
+          {ButtonAdd && <MenuAddType className="menu__add" />}
           {ButtonDelete && (
             <div className="menu__statment">
               Kliknij typ aby go wybrać do usunięcia

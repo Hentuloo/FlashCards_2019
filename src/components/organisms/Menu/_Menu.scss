@@ -5,13 +5,29 @@
     background-color: $green-first;
     justify-content: flex-end;
     border-bottom: 1px $white solid;
-    color: white;
+    color: $white;
+    position: fixed;
+    margin-bottom: 30px;
+    z-index: 10;
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -45px;
+        left: 0%;
+        height: 45px;
+        width: 100%;
+        background: url('../asset/images/waves.png');
+        z-index: 3;
+        border-top: 2px solid $white;
+    }
 
     .menu__panel {
         flex-grow: 1;
         position: absolute;
         width: 100%;
-        top: 70px;
+        top: 100px;
         background-color: $green-first;
     }
 
@@ -21,9 +37,9 @@
         text-align: center;
         font-size: $font-l;
 
-        li {
-            border-top: 1px solid $white;
+        padding-top: 15px;
 
+        li {
             a {
                 display: block;
                 width: 100%;
@@ -40,6 +56,7 @@
         text-align: center;
         padding: 5px 0px;
         font-size: $font-s;
+        padding-top: 20px;
     }
 
     .menu__list--active {
@@ -57,5 +74,9 @@
         button {
             margin: 5px 8px;
         }
+    }
+
+    .menu__add {
+        padding-top: 20px;
     }
 }
