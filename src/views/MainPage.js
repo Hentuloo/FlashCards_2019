@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MainLayout from 'layouts/MainLayout';
 import PageTypeButton from 'components/atoms/PageTypeButton/PageTypeButton';
+import MainPageTypes from './MainPageTypes';
+import MainPageDraw from './MainPageDraw';
+import MainPageLearn from './MainPageLearn';
 
 const sections = ['types', 'draw', 'learn'];
 
@@ -10,8 +13,14 @@ class MainPage extends Component {
     activeSection: 'types',
   };
 
-  handleChangeSection = string => {
+  componentDidMount() {
     const { activeSection } = this.props;
+    this.setState({ activeSection });
+  }
+
+  handleChangeSection = string => {
+    const { activeSection } = this.state;
+
     if (sections.includes(string) && string !== activeSection) {
       this.setState({ activeSection: string });
     }
@@ -25,15 +34,17 @@ class MainPage extends Component {
           <main>
             {activeSection === 'draw' && (
               <div className="mainPage__sections  mainPage__draw">
-                Tu jest losowanie
+                <MainPageDraw />
               </div>
             )}
             {activeSection === 'types' && (
-              <div className="mainPage__sections  mainPage__types">tu typy</div>
+              <div className="mainPage__sections  mainPage__types">
+                <MainPageTypes />
+              </div>
             )}
             {activeSection === 'learn' && (
               <div className="mainPage__sections  mainPage__learn">
-                tu jest do nauki
+                <MainPageLearn />
               </div>
             )}
           </main>

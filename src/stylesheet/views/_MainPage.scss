@@ -22,3 +22,66 @@
         background-color: $green-fourth;
     }
 }
+
+.mainPage__types {
+    display: flex;
+    flex-wrap: wrap;
+
+    .flashCard___Button {
+        flex-basis: 50%;
+        text-align: center;
+        margin: 20px 0px;
+    }
+
+    .flashCard___Button:nth-of-type(3n) {
+        flex-basis: 100%;
+    }
+}
+
+.mainPage__draw {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    font-size: $font-m;
+    text-align: center;
+
+    .mainPage__draw_Window {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+        background-color: $green-fourth;
+        color: $white;
+        margin: 10px auto;
+        padding: 4px 20px;
+
+    }
+
+    .menu__button {
+        box-sizing: content-box;
+        margin: 10px auto;
+        border: 8px solid $green-first;
+
+        i::before {
+            margin: 0px;
+        }
+    }
+}
+
+.mainPage__learn {
+    width: 97%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0px auto;
+
+    .mainPage__Learn_Add {
+        margin: 10px 0px;
+    }
+
+    .mainPage__Learn_Table {
+        flex-grow: 1;
+    }
+}
