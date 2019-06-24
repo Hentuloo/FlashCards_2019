@@ -1,0 +1,28 @@
+.icons {
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    font-size: $font-l;
+
+    input {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        margin: 0px;
+    }
+
+    i::before {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: 0px;
+        transform: translate(-50%, -50%);
+    }
+
+    &--active {
+        background-color: $green-third;
+    }
+}

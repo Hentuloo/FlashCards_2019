@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Hamburger from 'components/atoms/Hamburger/Hamburger';
 import MenuButton from 'components/atoms/MenuButton/MenuButton';
-import MenuAddType from 'components/molecules/MenuAddType/MenuAddType';
+import MenuAddType from 'components/molecules/MenuTypeOperations/MenuAddType';
+import MenuChangeType from 'components/molecules/MenuTypeOperations/MenuChangeType';
+import MenuDeleteType from 'components/molecules/MenuTypeOperations/MenuDeleteType';
 
 class Menu extends Component {
   state = {
@@ -80,17 +82,9 @@ class Menu extends Component {
               <a href="#logout">Wyloguj</a>
             </li>
           </nav>
-          {ButtonAdd && <MenuAddType className="menu__add" />}
-          {ButtonDelete && (
-            <div className="menu__statment">
-              Kliknij typ aby go wybrać do usunięcia
-            </div>
-          )}
-          {ButtonChange && (
-            <div className="menu__statment">
-              Kliknij typ aby go wybrać do modyfikacji
-            </div>
-          )}
+          {ButtonAdd && <MenuAddType className="menu__typeOperation" />}
+          {ButtonDelete && <MenuDeleteType className="menu__typeOperation" />}
+          {ButtonChange && <MenuChangeType className="menu__typeOperation" />}
         </div>
         <div className="menu__buttons">
           <MenuButton
