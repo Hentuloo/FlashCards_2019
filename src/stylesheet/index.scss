@@ -23,7 +23,10 @@
   @import './components/_organisms';
 
   // VIEWS
-  @import './views/_MainPage';
+  @import './views/MainPage/_Wrapper.scss';
+  @import './views/MainPage/_Learn.scss';
+  @import './views/MainPage/_Types.scss';
+  @import './views/MainPage/_Draw.scss';
 
   // LAYOUTS
   @import './layouts/_mainLayout';

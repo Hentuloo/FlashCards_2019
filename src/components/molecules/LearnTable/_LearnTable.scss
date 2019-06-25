@@ -1,4 +1,4 @@
-.table {
+.MP__learn_tableWrapper {
     width: 100%;
     height: 100%;
     background-color: $green-third;
@@ -7,7 +7,7 @@
     text-align: center;
     padding: 4px;
 
-    .table__item {
+    .MP__learn_tableItem {
         display: flex;
 
 
@@ -21,7 +21,7 @@
 
         }
 
-        .menu__button {
+        .mainButton {
             flex-shrink: 0;
             font-size: $font-m;
             width: 28px;

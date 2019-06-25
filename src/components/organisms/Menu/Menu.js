@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Hamburger from 'components/atoms/Hamburger/Hamburger';
-import MenuButton from 'components/atoms/MenuButton/MenuButton';
-import MenuAddType from 'components/molecules/MenuTypeOperations/MenuAddType';
-import MenuChangeType from 'components/molecules/MenuTypeOperations/MenuChangeType';
-import MenuDeleteType from 'components/molecules/MenuTypeOperations/MenuDeleteType';
+import MainButton from 'components/atoms/MainButton/MainButton';
+import MenuAddType from 'components/molecules/MenuOperations/MenuAddType';
+import MenuChangeType from 'components/molecules/MenuOperations/MenuChangeType';
+import MenuDeleteType from 'components/molecules/MenuOperations/MenuDeleteType';
+import MenuPagesList from 'components/atoms/MenuPagesList/MenuPagesList';
 
 class Menu extends Component {
   state = {
@@ -66,38 +67,30 @@ class Menu extends Component {
     } = this.state;
     return (
       <div className="menu">
-        <div className="menu__panel">
-          <nav
+        <div className="menu__panelWrapper">
+          <MenuPagesList
             className={
-              HamburgerActive ? 'menu__list menu__list--active' : 'menu__list'
+              HamburgerActive
+                ? 'menu__Pageslist menu__Pageslist--active'
+                : 'menu__Pageslist'
             }
-          >
-            <li>
-              <a href="#prem">Kup premke</a>
-            </li>
-            <li>
-              <a href="#sett">Ustawienia</a>
-            </li>
-            <li>
-              <a href="#logout">Wyloguj</a>
-            </li>
-          </nav>
-          {ButtonAdd && <MenuAddType className="menu__typeOperation" />}
-          {ButtonDelete && <MenuDeleteType className="menu__typeOperation" />}
-          {ButtonChange && <MenuChangeType className="menu__typeOperation" />}
+          />
+          {ButtonAdd && <MenuAddType className="menu__Operation" />}
+          {ButtonDelete && <MenuDeleteType className="menu__Operation" />}
+          {ButtonChange && <MenuChangeType className="menu__Operation" />}
         </div>
-        <div className="menu__buttons">
-          <MenuButton
+        <div className="menu__Operation_buttons">
+          <MainButton
             icon="icon-plus"
             value="dodaj typ fiszek"
             onClick={this.handleClickButtonAdd}
           />
-          <MenuButton
+          <MainButton
             icon="icon-minus"
             value="usuń typ fiszek"
             onClick={this.handleClickButtonDelete}
           />
-          <MenuButton
+          <MainButton
             icon="icon-cog"
             value="zmodyfikuj typ fiszek"
             onClick={this.handleClickButtonChange}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import ChoseIcon from 'components/molecules/ChoseIcon/ChoseIcon';
-import PageTypeButton from 'components/atoms/PageTypeButton/PageTypeButton';
+import SquareButton from 'components/atoms/SquareButton/SquareButton';
 
 class MenuAddType extends Component {
   state = { IconActive: 'params', title: '' };
@@ -32,10 +32,7 @@ class MenuAddType extends Component {
         <div className="menu__selectIcon">
           <ChoseIcon active={IconActive} onClick={this.handleClickIcon} />
         </div>
-        <PageTypeButton
-          value="Dodaj nową fiszkę!"
-          className="menu__addButton"
-        />
+        <SquareButton value="Dodaj nową fiszkę!" className="menu__addButton" />
       </div>
     );
   }

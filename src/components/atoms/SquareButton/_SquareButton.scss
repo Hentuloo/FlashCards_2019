@@ -1,7 +1,13 @@
-.mainPage__button {
+.SquareButton {
+    width: 100%;
     font-size: $font-s;
     text-transform: uppercase;
     color: $white;
     background-color: $green-first;
     border: 1px $white solid;
+    cursor: pointer;
+
+    &--active {
+        background-color: $green-fourth;
+    }
 }

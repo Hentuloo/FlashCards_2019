@@ -1,0 +1,19 @@
+.MP__types {
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+
+    div {
+        flex-basis: 50%;
+        text-align: center;
+        margin: 20px 0px;
+    }
+
+    div:nth-of-type(3n) {
+        flex-basis: 100%;
+    }
+
+    @media (min-width: $breakPoint-mobile) {
+        background-color: $green-first;
+        margin: 0px 10px;
+    }
+}

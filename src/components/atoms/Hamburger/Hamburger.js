@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import './_Hamburger.scss';
 import PropTypes from 'prop-types';
 
 const Hamburger = props => {

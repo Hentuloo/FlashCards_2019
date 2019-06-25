@@ -1,0 +1,42 @@
+.mainButton {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 0px;
+    font-size: $font-xl;
+    line-height: 30px;
+    color: $green-third;
+    background-color: $white;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+
+    span {
+        display: none;
+        position: absolute;
+        width: 150%;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: $font-s;
+        line-height: $font-s;
+        font-weight: $font-bold;
+        color: $black;
+    }
+
+    &--active {
+        background-color: black;
+    }
+
+    &--withText {
+        span {
+            display: block;
+        }
+    }
+
+    &--bgc {
+        background-color: $gray-first;
+        color: black
+    }
+}

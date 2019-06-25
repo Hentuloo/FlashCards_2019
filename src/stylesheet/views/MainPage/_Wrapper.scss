@@ -1,0 +1,43 @@
+//MP = mainPage
+
+.MP__wrapper {
+
+    @media (min-width: $breakPoint-mobile) {
+        display: flex;
+    }
+
+    .MP__section {
+        display: none;
+        width: 100%;
+        min-height: calc(100vh - 70px - 80px); // menus
+        padding-top: 110px;
+
+        &--active {
+            display: flex;
+        }
+
+        @media (min-width: $breakPoint-mobile) {
+            display: flex;
+        }
+    }
+}
+
+.MP__sectionNav_Mobile {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    height: 70px;
+    background-color: $green-third;
+
+    @media (min-width: $breakPoint-mobile) {
+        display: none;
+    }
+
+    .SquareButton {
+        width: 100%;
+        margin: 10px 5px;
+    }
+}

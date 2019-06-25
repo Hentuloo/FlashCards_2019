@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
-import MainPageTable from 'components/molecules/MainPageTable/MainPageTable';
-import MenuButton from 'components/atoms/MenuButton/MenuButton';
+import LearnTable from 'components/molecules/LearnTable/LearnTable';
+import MainButton from 'components/atoms/MainButton/MainButton';
+import SquareButton from 'components/atoms/SquareButton/SquareButton';
 
 const InputsCounter = count => {
   const inputs = [];
   for (let i = 0; i < count; i += 1) {
     inputs.push(
-      <>
+      <div>
         <input type="text" placeholder="word" />
         <input type="text" placeholder="słowo" />
-      </>,
+      </div>,
     );
   }
   return inputs;
 };
-class MainPageLearn extends Component {
+class Learn extends Component {
   state = {
-    counter: 3,
+    counter: 1,
   };
 
   handleClickNewInput = () => {
@@ -29,28 +30,25 @@ class MainPageLearn extends Component {
     const { counter } = this.state;
     return (
       <>
-        <div className="mainPageLearn__Add_Wrapper">
-          <div className="mainPageLearn__Add_Inputs">
-            {InputsCounter(counter)}
-          </div>
-          <MenuButton
+        <div className="MP__learn_addWrapper">
+          <div className="MP__learn_addInputs">{InputsCounter(counter)}</div>
+          <MainButton
             icon="icon-plus"
             value="dodaj typ fiszek"
             onClick={this.handleClickNewInput}
           />
-          <input
-            className="mainPageLearn__Add_Button"
+          <SquareButton
             type="submit"
-            value="Dodaj nowe słówko"
+            value={counter > 1 ? 'Dodaj nowe słówka' : 'Dodaj nowe słówko'}
           />
         </div>
 
-        <div className="mainPage__Learn_Table">
-          <MainPageTable />
+        <div className="MP__learn_table">
+          <LearnTable />
         </div>
       </>
     );
   }
 }
 
-export default MainPageLearn;
+export default Learn;

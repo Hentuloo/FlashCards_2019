@@ -1,0 +1,67 @@
+.MP__learn {
+    width: 97%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0px auto;
+
+    .MP__learn_addWrapper {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: center;
+        margin: 30px 0px;
+
+        .MP__learn_addInputs {
+            margin: 0px auto;
+
+            div {
+                display: flex;
+                flex-basis: 50%;
+                color: white;
+                text-align: center;
+            }
+
+            input {
+                height: 30px;
+                border: none;
+                border: 1px solid $gray-first;
+                background-color: $green-third;
+
+                @media (min-width: $breakPoint-mobile) {
+                    max-width: 100px;
+                }
+            }
+        }
+
+        .mainButton {
+            width: 35px;
+            height: 35px;
+            font-size: $font-m;
+            border: 2px solid $green-first;
+            margin: 0px auto;
+        }
+
+        .SquareButton {
+            flex-grow: 1;
+            padding: 4px;
+            margin: 4px;
+            background-color: $green-third;
+            border: 2px solid $green-first;
+            color: white;
+        }
+
+        .MP__learn_table {
+            flex-grow: 1;
+        }
+
+        @media (min-width: $breakPoint-mobile) {
+            width: 90%;
+            margin: 30px 10px;
+
+            .MP__learn_table {
+                flex-grow: 0;
+            }
+        }
+    }
+}

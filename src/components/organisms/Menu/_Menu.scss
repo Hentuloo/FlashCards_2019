@@ -10,10 +10,7 @@
     margin-bottom: 30px;
     z-index: 10;
 
-    @media (min-width: $breakPoint-mobile) {
-        justify-content: flex-start;
-    }
-
+    //waves png
     &::before {
         content: '';
         position: absolute;
@@ -26,24 +23,22 @@
         border-top: 2px solid $white;
     }
 
-    .menu__panel {
-        flex-grow: 1;
-        position: absolute;
-        width: 100%;
-        top: 100px;
-        background-color: $green-first;
-
-        @media (min-width: $breakPoint-mobile) {
-            width: 33%;
-        }
+    .menu__hamburger {
+        align-self: flex-end;
+        margin: 10px 5px;
     }
 
-    .menu__list {
+
+    .menu__Pageslist {
         display: none;
         list-style: none;
         text-align: center;
         font-size: $font-l;
         padding-top: 15px;
+
+        &--active {
+            display: block;
+        }
 
         li {
             a {
@@ -55,8 +50,12 @@
                 text-decoration: none;
             }
         }
+    }
 
-        @media (min-width: $breakPoint-mobile) {
+    @media (min-width: $breakPoint-mobile) {
+        justify-content: flex-start;
+
+        .menu__Pageslist {
             position: fixed;
             display: flex;
             height: 70px;
@@ -69,65 +68,9 @@
                 }
             }
         }
-    }
 
-    .menu__list--active {
-        display: block;
-    }
-
-    .menu__hamburger {
-        align-self: flex-end;
-        margin: 10px 5px;
-
-        @media (min-width: $breakPoint-mobile) {
+        .menu__hamburger {
             display: none;
-        }
-    }
-
-    .menu__buttons {
-        flex-grow: 1;
-
-        button {
-            margin: 5px 8px;
-        }
-    }
-
-    .menu__typeOperation {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 90%;
-        min-height: 100px;
-        margin: 0px auto;
-        padding-top: 20px;
-        font-size: $font-m;
-        text-align: center;
-
-        @media (min-width: $breakPoint-mobile) {
-            min-height: calc(100vh - 90px);
-            justify-content: center;
-            padding-bottom: 40vh;
-        }
-
-        .menu__addButton {
-            margin: 10px auto;
-        }
-
-        .menu__selectIcon {
-            width: 100%;
-            height: 90px;
-            margin: 10px auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            overflow-y: scroll;
-            font-size: $font-m;
-            border: 1px solid $white;
-        }
-
-        .menu__addButton {
-            padding: 7px;
-            background-color: $green-third;
         }
     }
 }

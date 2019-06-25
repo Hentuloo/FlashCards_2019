@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import PageTypeButton from 'components/atoms/PageTypeButton/PageTypeButton';
+import ChoseIcon from 'components/molecules/ChoseIcon/ChoseIcon';
+import SquareButton from 'components/atoms/SquareButton/SquareButton';
 
 class MenuAddType extends Component {
   state = {
+    IconActive: 'params',
+    title: '',
     type: '',
   };
+
+  handleClickIcon = IconActive => this.setState({ IconActive });
+
+  handleChangeTitle = title => this.setState({ title });
 
   handleChangeType = type => this.setState({ type });
 
   render() {
     const { className } = this.props;
     const propClasses = classNames(className);
-    const { type } = this.state;
+    const { IconActive, title, type } = this.state;
     return (
       <div className={propClasses}>
         <div>
@@ -26,7 +33,22 @@ class MenuAddType extends Component {
             <option value="Czøowiek">Chøowiek</option>
           </select>
         </div>
-        <PageTypeButton value="Usuń!" className="menu__addButton" />
+        <label htmlFor="type__title">
+          Nazwa:{' '}
+          <input
+            id="type__title"
+            type="text"
+            name="add"
+            placeholder="np. sport"
+            value={title}
+            onChange={() => this.handleChangeTitle('title')}
+          />
+        </label>
+
+        <div className="menu__selectIcon">
+          <ChoseIcon active={IconActive} onClick={this.handleClickIcon} />
+        </div>
+        <SquareButton value="Zmodyfikuj!" className="menu__addButton" />
       </div>
     );
   }
