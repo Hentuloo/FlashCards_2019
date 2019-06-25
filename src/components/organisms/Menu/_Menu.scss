@@ -10,6 +10,9 @@
     margin-bottom: 30px;
     z-index: 10;
 
+    @media (min-width: $breakPoint-mobile) {
+        justify-content: flex-start;
+    }
 
     &::before {
         content: '';
@@ -29,6 +32,10 @@
         width: 100%;
         top: 100px;
         background-color: $green-first;
+
+        @media (min-width: $breakPoint-mobile) {
+            width: 33%;
+        }
     }
 
     .menu__list {
@@ -36,7 +43,6 @@
         list-style: none;
         text-align: center;
         font-size: $font-l;
-
         padding-top: 15px;
 
         li {
@@ -49,6 +55,20 @@
                 text-decoration: none;
             }
         }
+
+        @media (min-width: $breakPoint-mobile) {
+            position: fixed;
+            display: flex;
+            height: 70px;
+            top: 0%;
+            right: 0%;
+
+            li {
+                a {
+                    padding: 5px 15px;
+                }
+            }
+        }
     }
 
     .menu__list--active {
@@ -58,6 +78,10 @@
     .menu__hamburger {
         align-self: flex-end;
         margin: 10px 5px;
+
+        @media (min-width: $breakPoint-mobile) {
+            display: none;
+        }
     }
 
     .menu__buttons {
@@ -69,9 +93,9 @@
     }
 
     .menu__typeOperation {
-        display:flex;
+        display: flex;
         flex-direction: column;
-        justify-content:space-around;
+        justify-content: space-around;
         width: 90%;
         min-height: 100px;
         margin: 0px auto;
@@ -79,9 +103,15 @@
         font-size: $font-m;
         text-align: center;
 
-     .menu__addButton{
-         margin: 10px auto;
-     }
+        @media (min-width: $breakPoint-mobile) {
+            min-height: calc(100vh - 90px);
+            justify-content: center;
+            padding-bottom: 40vh;
+        }
+
+        .menu__addButton {
+            margin: 10px auto;
+        }
 
         .menu__selectIcon {
             width: 100%;

@@ -31,22 +31,28 @@ class MainPage extends Component {
     return (
       <MainLayout>
         <>
-          <main>
-            {activeSection === 'draw' && (
-              <div className="mainPage__sections  mainPage__draw">
-                <MainPageDraw />
-              </div>
-            )}
-            {activeSection === 'types' && (
-              <div className="mainPage__sections  mainPage__types">
-                <MainPageTypes />
-              </div>
-            )}
-            {activeSection === 'learn' && (
-              <div className="mainPage__sections  mainPage__learn">
-                <MainPageLearn />
-              </div>
-            )}
+          <main className="mainPage__wrapper">
+            <div
+              className={`mainPage__sections  mainPage__draw ${
+                activeSection === 'draw' ? 'mainPage__sections--active' : ''
+              }`}
+            >
+              <MainPageDraw />
+            </div>
+            <div
+              className={`mainPage__sections  mainPage__types ${
+                activeSection === 'types' ? 'mainPage__sections--active' : ''
+              }`}
+            >
+              <MainPageTypes />
+            </div>
+            <div
+              className={`mainPage__sections  mainPage__learn ${
+                activeSection === 'learn' ? 'mainPage__sections--active' : ''
+              }`}
+            >
+              <MainPageLearn />
+            </div>
           </main>
           <nav className="mainPage__nav">
             <PageTypeButton

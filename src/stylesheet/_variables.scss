@@ -5,7 +5,9 @@
   $green-fourth: #63953F;
   $white: #ffffff;
   $black: #000000;
-  $turquoise: #9FBDBA;
+  $gray-first: rgb(233, 233, 233);
+  $red-first: #A94747;
+
 
   //font-weight
   $font-light: 300;
@@ -19,3 +21,7 @@
   $font-l: 2.4rem;
   $font-xl: 4rem;
   $font-xxl: 6.5rem;
+
+  // break-point
+  $breakPoint-mobile: 768px;
+  $breakPoint-large: 1350px;
