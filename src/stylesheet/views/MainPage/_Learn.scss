@@ -4,6 +4,10 @@
     margin: 0px auto;
     padding: 0px 30px;
 
+    @media (min-width: $breakPoint-mobile) {
+        padding: 0px 10px;
+    }
+
     .MP__learn_addWrapper {
         display: flex;
         flex-direction: column;

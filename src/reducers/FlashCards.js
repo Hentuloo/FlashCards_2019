@@ -2,6 +2,7 @@ import { ADD_WORD } from 'actions';
 
 const exampleState = [
   {
+    id: 'asdf123123afdssdafa',
     title: 'człowiek i chodzenie',
     cards: [
       { first: 'siema1', secondd: 'siema2' },
@@ -10,6 +11,7 @@ const exampleState = [
     ],
   },
   {
+    id: 'asdf12312123afdsa',
     title: 'jakiś dział',
     cards: [
       { first: 'siema1', secondd: 'siema2' },
@@ -18,6 +20,7 @@ const exampleState = [
     ],
   },
   {
+    id: 'asdfafsd123123afdsa',
     title: 'następny dział',
     cards: [
       { first: 'siema1', secondd: 'siema2' },
@@ -26,6 +29,7 @@ const exampleState = [
     ],
   },
   {
+    id: 'asdf1231asdf2323afdsa',
     title: 'następny dział',
     cards: [
       { first: 'siema1', secondd: 'siema2' },
