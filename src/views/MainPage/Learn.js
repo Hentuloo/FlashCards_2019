@@ -7,7 +7,7 @@ const InputsCounter = count => {
   const inputs = [];
   for (let i = 0; i < count; i += 1) {
     inputs.push(
-      <div>
+      <div key={i}>
         <input type="text" placeholder="word" />
         <input type="text" placeholder="słowo" />
       </div>,

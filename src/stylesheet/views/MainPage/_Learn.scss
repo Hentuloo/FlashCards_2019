@@ -1,8 +1,8 @@
 .MP__learn {
-    width: 97%;
+
     flex-direction: column;
-    flex-wrap: wrap;
     margin: 0px auto;
+    padding: 0px 30px;
 
     .MP__learn_addWrapper {
         display: flex;
@@ -19,17 +19,19 @@
                 display: flex;
                 flex-basis: 50%;
                 color: white;
-                text-align: center;
+                justify-content: center;
             }
 
             input {
+                max-width: 40%;
                 height: 30px;
                 border: none;
                 border: 1px solid $gray-first;
                 background-color: $green-third;
 
+
                 @media (min-width: $breakPoint-mobile) {
-                    max-width: 100px;
+                    max-width: 150px;
                 }
             }
         }
