@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import LearnTable from 'components/molecules/LearnTable/LearnTable';
 import MainButton from 'components/atoms/MainButton/MainButton';
 import SquareButton from 'components/atoms/SquareButton/SquareButton';
@@ -27,6 +30,7 @@ class Learn extends Component {
   };
 
   render() {
+    const { singleType } = this.props;
     const { counter } = this.state;
     return (
       <>
@@ -44,11 +48,25 @@ class Learn extends Component {
         </div>
 
         <div className="MP__learn_table">
-          <LearnTable />
+          {singleType && <LearnTable data={singleType.cards} />}
         </div>
       </>
     );
   }
 }
+const mapStateToProps = state => ({
+  singleType: state.FlashCards.find(type => type.id === state.Settings.active),
+});
 
-export default Learn;
+Learn.propTypes = {
+  singleType: PropTypes.shape({
+    cards: PropTypes.arrayOf(PropTypes.object),
+    id: PropTypes.string,
+    title: PropTypes.string,
+  }),
+};
+Learn.defaultProps = {
+  singleType: null,
+};
+
+export default connect(mapStateToProps)(Learn);
