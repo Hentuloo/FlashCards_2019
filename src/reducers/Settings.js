@@ -1,6 +1,6 @@
 import { CHANGE_ACTIVE } from 'actions';
 
-const initialState = { active: false, wyjeb: true };
+const initialState = { active: false };
 
 export default (state = initialState, action) => {
   switch (action.type) {

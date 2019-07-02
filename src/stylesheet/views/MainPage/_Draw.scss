@@ -19,8 +19,13 @@
         margin: 10px auto;
         padding: 4px 20px;
 
-        span {
+        .MP__draw_Window_span {
             display: block;
+
+        }
+
+        .MP__draw_Window_span--animated {
+            animation: wordOpacity 0.5s 0.4s ease-in-out both;
         }
 
         @media (min-width: $breakPoint-mobile) {
@@ -38,5 +43,15 @@
         i::before {
             margin: 0px;
         }
+    }
+}
+
+@keyframes wordOpacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
