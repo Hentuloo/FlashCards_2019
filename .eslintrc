@@ -8,7 +8,7 @@
     "prettier/react"
   ],
   "env": { "jest": true },
-  "globals": { "document": true },
+  "globals": { "document": true, "window": true, "localStorage": true },
   "rules": {
     "import/no-unresolved": 0,
     "import/no-absolute-path": 0,

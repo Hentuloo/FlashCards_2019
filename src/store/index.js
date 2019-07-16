@@ -1,4 +1,6 @@
-import { createStore } from 'redux';
-import reducers from 'reducers';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from 'reducers';
 
-export default createStore(reducers);
+// Note: this API requires redux@>=3.1.0
+export default createStore(rootReducer, applyMiddleware(thunk));

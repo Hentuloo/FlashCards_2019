@@ -1,0 +1,36 @@
+.Statement {
+    position: fixed;
+    width: 80%;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: $font-l;
+    text-align: center;
+    animation: opacity 3s ease-in-out forwards;
+    cursor: pointer;
+
+    &__button {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 8px;
+        top: 0px;
+        color: black;
+        background-color: transparent;
+        border: 0px;
+        font-size: $font-m;
+        font-weight: $font-bold;
+        cursor: pointer;
+    }
+
+    &_failure {
+        background-color: $red-second;
+        color: $white;
+    }
+
+    &_success {
+        background-color: $white;
+    }
+
+}

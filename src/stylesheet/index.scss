@@ -23,13 +23,8 @@
   @import './components/_organisms';
 
   // VIEWS
-  @import './views/MainPage/_Wrapper.scss';
-  @import './views/MainPage/_Learn.scss';
-  @import './views/MainPage/_Types.scss';
-  @import './views/MainPage/_Draw.scss';
-
-  // LAYOUTS
-  @import './layouts/_mainLayout';
+  @import './views/_AuthPage.scss';
+  @import './views/MainPage/index.scss';
 
   // FONTELLO
   @import "../asset/fontello/css/fontello.css";
