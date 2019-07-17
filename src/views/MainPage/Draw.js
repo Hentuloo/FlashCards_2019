@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import MainButton from 'components/atoms/MainButton/MainButton';
+import { MainButton } from 'components/atoms';
 
 const drawRandomCard = cards => {
   return cards[Math.floor(Math.random() * cards.length)];

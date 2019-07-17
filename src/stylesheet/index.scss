@@ -15,12 +15,10 @@
   }
 
   // VARIABLES
-  @import './_variables';
+  @import './_variables.scss';
 
   // COMPONENTS
-  @import './components/_atoms';
-  @import './components/_molecules';
-  @import './components/_organisms';
+  @import './_components.scss';
 
   // VIEWS
   @import './views/_AuthPage.scss';

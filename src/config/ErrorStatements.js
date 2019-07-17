@@ -12,6 +12,7 @@ export default {
     idEmpty: 'Coś poszło nie tak',
     idAlpaNum: 'Coś poszło nie tak',
     loginFailure: 'Nie ma takiego użytkownika',
+    passwordEmpty: 'Pole z hasłem jest puste!',
 
     dataWrong: 'Źle wpisane dane!',
   },

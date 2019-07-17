@@ -1,0 +1,43 @@
+$randomWidth: random(60) * 1%;
+$randomWidthSecond: random(60) * 1%;
+
+
+
+.LoadingBar {
+    position: fixed;
+    width: 100%;
+    height: 6px;
+    left: 0%;
+    top: 0%;
+    background-color: $white;
+    z-index: 10;
+
+    &::before,
+    &::after {
+        content: '';
+        position: fixed;
+        height: 6px;
+        width: $randomWidth;
+        min-width: 10%;
+        left: 0%;
+        top: 0%;
+        background-color: $green-first;
+        animation: LoadingMovment 2.9s ease-in-out infinite both;
+    }
+
+    &::before {
+        width: $randomWidthSecond;
+        background-color: $green-fourth;
+        animation: LoadingMovment 2s ease-out infinite both;
+    }
+}
+
+@keyframes LoadingMovment {
+    from {
+        transform: translateX(-100vw);
+    }
+
+    to {
+        transform: translateX(100vw);
+    }
+}

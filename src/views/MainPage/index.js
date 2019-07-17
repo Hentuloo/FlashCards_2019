@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { fetchTypes } from 'actions';
+
 import MainLayout from 'layouts/MainLayout';
-import TypesMenuMobile from 'components/organisms/TypesMenuMobile/TypesMenuMobile';
+import { TypesMenuMobile } from 'components/organisms';
 
 import Types from './Types';
 import Draw from './Draw';
@@ -15,7 +18,8 @@ class MainPage extends Component {
   };
 
   componentDidMount() {
-    const { activeSection } = this.props;
+    const { activeSection, fetchTypesAction } = this.props;
+    fetchTypesAction();
     this.setState({ activeSection });
   }
 
@@ -64,11 +68,17 @@ class MainPage extends Component {
   }
 }
 
+const mapDispatchToProps = { fetchTypesAction: fetchTypes };
+
 MainPage.propTypes = {
   activeSection: PropTypes.string,
+  fetchTypesAction: PropTypes.func.isRequired,
 };
 MainPage.defaultProps = {
   activeSection: 'types',
 };
 
-export default MainPage;
+export default connect(
+  null,
+  mapDispatchToProps,
+)(MainPage);

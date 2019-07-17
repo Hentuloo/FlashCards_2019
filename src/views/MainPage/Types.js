@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { changeActive } from 'actions';
 
-import MainButton from 'components/atoms/MainButton/MainButton';
+import { MainButton } from 'components/atoms';
 
 const TypesTemplate = ({ types, action, active }) =>
   types.map(type => (

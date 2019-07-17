@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import LearnTable from 'components/molecules/LearnTable/LearnTable';
-import MainButton from 'components/atoms/MainButton/MainButton';
-import SquareButton from 'components/atoms/SquareButton/SquareButton';
+import { LearnTable } from 'components/molecules';
+import { MainButton, SquareButton } from 'components/atoms';
 
 const InputsCounter = count => {
   const inputs = [];

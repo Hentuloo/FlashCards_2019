@@ -1,5 +1,6 @@
 import {
   CHANGE_ACTIVE,
+  ERROR_STATEMENT_SET,
   AUTHENTICATE_REQUEST,
   AUTHENTICATE_SUCCESS,
   AUTHENTICATE_FAILURE,
@@ -16,6 +17,8 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, {
         active: action.payload.type,
       });
+    case ERROR_STATEMENT_SET:
+      return { ...state, errorType: action.payload.errorType };
 
     case LOGIN_REQUEST:
       return { ...state, loading: true };

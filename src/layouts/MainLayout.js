@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Menu from 'components/organisms/Menu/Menu';
+import { Menu } from 'components/organisms';
 
 const MainLayout = ({ children }) => {
   return (
