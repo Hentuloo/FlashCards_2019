@@ -1,7 +1,7 @@
 import React from 'react';
 import SquareButton from 'components/atoms/SquareButton/SquareButton';
 
-const TypesMenuMobile = ({ activeSection, action }) => {
+const ViewsMenuMobile = ({ activeSection, action }) => {
   return (
     <>
       <SquareButton
@@ -29,4 +29,4 @@ const TypesMenuMobile = ({ activeSection, action }) => {
   );
 };
 
-export default TypesMenuMobile;
+export default ViewsMenuMobile;

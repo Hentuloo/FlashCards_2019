@@ -1,7 +1,5 @@
 $randomWidth: random(60) * 1%;
-$randomWidthSecond: random(60) * 1%;
-
-
+$randomWidthS: random(60) * 1%;
 
 .LoadingBar {
     position: fixed;
@@ -26,7 +24,7 @@ $randomWidthSecond: random(60) * 1%;
     }
 
     &::before {
-        width: $randomWidthSecond;
+        width: $randomWidthS;
         background-color: $green-fourth;
         animation: LoadingMovment 2s ease-out infinite both;
     }

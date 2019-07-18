@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import Hamburger from 'components/atoms/Hamburger/Hamburger';
-import MainButton from 'components/atoms/MainButton/MainButton';
-import MenuAddType from 'components/molecules/MenuOperations/MenuAddType';
-import MenuChangeType from 'components/molecules/MenuOperations/MenuChangeType';
-import MenuDeleteType from 'components/molecules/MenuOperations/MenuDeleteType';
-import MenuPagesList from 'components/atoms/MenuPagesList/MenuPagesList';
+import { Hamburger, MainButton, MenuPagesList } from 'components/atoms';
+
+import {
+  MenuAddType,
+  MenuChangeType,
+  MenuDeleteType,
+} from 'components/molecules';
 
 class Menu extends Component {
   state = {

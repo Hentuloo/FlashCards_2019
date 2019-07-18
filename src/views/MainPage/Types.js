@@ -27,8 +27,19 @@ class Types extends Component {
 
   render() {
     const { types, active } = this.props;
+    if (types.length) {
+      return (
+        <TypesTemplate
+          types={types}
+          action={this.handleClick}
+          active={active}
+        />
+      );
+    }
     return (
-      <TypesTemplate types={types} action={this.handleClick} active={active} />
+      <h3 className="MP__types MP__types_header">
+        Dodaj pierwsze swoje fiszki korzystając z plusa
+      </h3>
     );
   }
 }

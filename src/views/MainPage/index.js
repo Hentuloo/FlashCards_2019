@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { fetchTypes } from 'actions';
 
 import MainLayout from 'layouts/MainLayout';
-import { TypesMenuMobile } from 'components/organisms';
+import { ViewsMenuMobile } from 'components/organisms';
 
 import Types from './Types';
 import Draw from './Draw';
@@ -57,7 +57,7 @@ class MainPage extends Component {
             </div>
           </main>
           <nav className="MP__sectionNav_Mobile">
-            <TypesMenuMobile
+            <ViewsMenuMobile
               activeSection={activeSection}
               action={this.handleChangeSection}
             />

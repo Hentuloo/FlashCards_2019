@@ -1,4 +1,4 @@
 import Menu from './Menu/Menu';
-import TypesMenuMobile from './TypesMenuMobile/TypesMenuMobile';
+import ViewsMenuMobile from './ViewsMenuMobile/ViewsMenuMobile';
 
-export { Menu, TypesMenuMobile };
+export { Menu, ViewsMenuMobile };
