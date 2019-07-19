@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Hamburger, MainButton, MenuPagesList } from 'components/atoms';
+import PropTypes from 'prop-types';
+
+import { connect } from 'react-redux';
+import { resetErrorType } from 'actions';
 
 import {
   MenuAddType,
@@ -59,6 +63,16 @@ class Menu extends Component {
     });
   };
 
+  handleClickForClose = () => {
+    const { resetErrorTypeAction } = this.props;
+    this.setState({
+      ButtonDelete: false,
+      ButtonAdd: false,
+      ButtonChange: false,
+    });
+    resetErrorTypeAction();
+  };
+
   render() {
     const {
       HamburgerActive,
@@ -76,9 +90,24 @@ class Menu extends Component {
                 : 'menu__Pageslist'
             }
           />
-          {ButtonAdd && <MenuAddType className="menu__Operation" />}
-          {ButtonDelete && <MenuDeleteType className="menu__Operation" />}
-          {ButtonChange && <MenuChangeType className="menu__Operation" />}
+          {ButtonAdd && (
+            <MenuAddType
+              closeWindow={this.handleClickForClose}
+              className="menu__Operation"
+            />
+          )}
+          {ButtonDelete && (
+            <MenuDeleteType
+              closeWindow={this.handleClickForClose}
+              className="menu__Operation"
+            />
+          )}
+          {ButtonChange && (
+            <MenuChangeType
+              closeWindow={this.handleClickForClose}
+              className="menu__Operation"
+            />
+          )}
         </div>
         <div className="menu__Operation_buttons">
           <MainButton
@@ -106,4 +135,13 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+Menu.propTypes = {
+  resetErrorTypeAction: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = { resetErrorTypeAction: resetErrorType };
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(Menu);

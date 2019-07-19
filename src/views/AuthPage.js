@@ -34,11 +34,11 @@ class AuthPage extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { pageType, email, password } = this.state;
-    const { authenticateAction, loginAction, setError } = this.props;
+    const { authenticateAction, loginAction, setErrorAction } = this.props;
 
     const notValid = validator({ email, password });
     if (notValid) {
-      setError(notValid.errorType);
+      setErrorAction(notValid.errorType);
     } else {
       const { signup, login } = Constants.PATHS;
 
@@ -120,13 +120,13 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   authenticateAction: authenticate,
   loginAction: loginUser,
-  setError: setErrorStatement,
+  setErrorAction: setErrorStatement,
 };
 
 AuthPage.propTypes = {
   authenticateAction: PropTypes.func.isRequired,
   loginAction: PropTypes.func.isRequired,
-  setError: PropTypes.func.isRequired,
+  setErrorAction: PropTypes.func.isRequired,
   errorType: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 AuthPage.defaultProps = {

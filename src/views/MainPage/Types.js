@@ -11,6 +11,7 @@ const TypesTemplate = ({ types, action, active }) =>
       <MainButton
         className={`mainButton--withText 
         ${active === type.id ? 'mainButton--active' : ''}`}
+        icon={`icon-${type.icon}`}
         value={type.title}
         onClick={() => action(type.id)}
       />

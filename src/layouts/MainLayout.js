@@ -1,12 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { LoadingBar } from 'components/atoms';
 import { Menu } from 'components/organisms';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children, loading }) => {
   return (
     <>
+      {loading && <LoadingBar />}
       <Menu />
-      <div>{children}</div>
+      <div className="AuthPage__Layout">{children}</div>
     </>
   );
 };
@@ -14,5 +17,8 @@ const MainLayout = ({ children }) => {
 MainLayout.propTypes = {
   children: PropTypes.element.isRequired,
 };
+const mapStateToProps = ({ Settings }) => ({
+  loading: Settings.loading,
+});
 
-export default MainLayout;
+export default connect(mapStateToProps)(MainLayout);

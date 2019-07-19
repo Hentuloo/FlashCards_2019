@@ -1,13 +1,14 @@
 .menu {
     display: flex;
     width: 100%;
-    height: 70px;
+    height: 76px;
     background-color: $green-first;
     justify-content: flex-end;
     border-bottom: 1px $white solid;
+    padding-top: 4px;
     color: $white;
     position: fixed;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     z-index: 10;
 
     //waves png
@@ -34,7 +35,8 @@
         list-style: none;
         text-align: center;
         font-size: $font-l;
-        padding-top: 15px;
+        padding-top: 0px;
+        line-height: 65px;
 
         &--active {
             display: block;
@@ -58,7 +60,7 @@
         .menu__Pageslist {
             position: fixed;
             display: flex;
-            height: 70px;
+            height: 76px;
             top: 0%;
             right: 0%;
 

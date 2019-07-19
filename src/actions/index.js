@@ -20,8 +20,12 @@ export * from './cardsActions';
 
 // ACTIONS FOR ANY PAGE
 export const ERROR_STATEMENT_SET = 'ERROR_STATEMENT_SET';
+export const ERROR_STATEMENT_RESET = 'ERROR_STATEMENT_RESET';
 
 export const setErrorStatement = errorType => ({
   type: ERROR_STATEMENT_SET,
   payload: { errorType },
+});
+export const resetErrorType = () => ({
+  type: ERROR_STATEMENT_RESET,
 });

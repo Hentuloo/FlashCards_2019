@@ -40,7 +40,7 @@ export default props => {
             errorType: 'iconEmpty',
           };
         }
-        if (!validator.contains(props[key], `icon-`)) {
+        if (!/^[a-z0-9_-]+$/i.test(props[key])) {
           return {
             errorType: 'iconWrong',
           };

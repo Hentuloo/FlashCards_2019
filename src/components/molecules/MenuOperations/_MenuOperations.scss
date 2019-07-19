@@ -17,6 +17,7 @@
          padding-top: 20px;
          font-size: $font-m;
          text-align: center;
+         position: relative;
 
          .menu__addButton {
              margin: 10px auto;
@@ -38,6 +39,21 @@
              padding: 7px;
              background-color: $green-third;
          }
+
+         .menu__closeButton {
+             position: absolute;
+             top: 0%;
+             right: 0%;
+             transform: translate(50%, -50%);
+             background-color: $green-third;
+             color: $white;
+         }
+
+         &__wrong {
+             padding: 7px;
+             background-color: $white;
+             color: $green-third;
+         }
      }
 
      .menu__Operation_buttons {
@@ -56,13 +72,14 @@
              max-width: 600px;
              min-height: 30vh;
              left: 50%;
-             top: 45%;
+             top: 50%;
              transform: translate(-50%, -50%);
              background-color: $green-first;
              justify-content: center;
              padding: 10px;
              border: 5px solid white;
              box-shadow: 0px 0px 0px 12px $green-third;
+             z-index: 11;
          }
 
 
