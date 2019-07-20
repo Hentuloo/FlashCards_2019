@@ -1,5 +1,7 @@
 import {
   ADD_WORD,
+  CHANGE_ACTIVE_SUCCESS,
+  // CHANGE_ACTIVE_FAILURE,
   EDIT_TYPE_SUCCESS,
   // EDIT_TYPE_FAILURE,
   DELETE_TYPE_SUCCESS,
@@ -12,6 +14,20 @@ import {
 
 export default (state = [], action) => {
   switch (action.type) {
+    case CHANGE_ACTIVE_SUCCESS: {
+      const { idType, cards } = action.payload;
+      return [
+        ...state.map(type => {
+          if (type.id === idType) {
+            return {
+              ...type,
+              cards,
+            };
+          }
+          return type;
+        }),
+      ];
+    }
     case EDIT_TYPE_SUCCESS: {
       const { id, title, icon } = action.payload;
       return [
@@ -30,7 +46,7 @@ export default (state = [], action) => {
     case DELETE_TYPE_SUCCESS:
       return [...state.filter(type => type.id !== action.payload.id)];
     case ADD_TYPE_SUCCESS:
-      return [...state, action.payload];
+      return [...state, { ...action.payload }];
     case FETCH_TYPES_SUCCESS:
       return [...state, ...action.payload];
     case ADD_WORD:

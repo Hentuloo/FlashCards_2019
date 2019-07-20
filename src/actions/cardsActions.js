@@ -1,9 +1,11 @@
 import axios from 'axios';
 
 export const ADD_WORD = 'ADD_WORD';
-export const CHANGE_ACTIVE = 'CHANGE_ACTIVE';
 
 export const REQUEST = 'FETCH_TYPES_REQUEST';
+
+export const CHANGE_ACTIVE_SUCCESS = 'CHANGE_ACTIVE_SUCCESS';
+export const CHANGE_ACTIVE_FAILURE = 'CHANGE_ACTIVE_FAILURE';
 
 export const EDIT_TYPE_SUCCESS = 'EDIT_TYPE_SUCCESS';
 export const EDIT_TYPE_FAILURE = 'EDIT_TYPE_FAILURE';
@@ -64,7 +66,7 @@ export const addType = (title, icon) => dispatch => {
     .then(res =>
       dispatch({
         type: ADD_TYPE_SUCCESS,
-        payload: res.data,
+        payload: { ...res.data },
       }),
     )
     .catch(err =>
@@ -90,7 +92,7 @@ export const fetchTypes = () => dispatch => {
     .catch(err =>
       dispatch({
         type: FETCH_TYPES_FAILURE,
-        payload: err.response.errorType,
+        payload: { errorType: err.response.data.errorType },
       }),
     );
 };
@@ -99,7 +101,26 @@ export const addWord = (firstW, secondW) => ({
   type: ADD_WORD,
   payload: { firstW, secondW },
 });
-export const changeActive = type => ({
-  type: CHANGE_ACTIVE,
-  payload: { type },
-});
+export const changeActive = id => dispatch => {
+  dispatch({
+    type: REQUEST,
+  });
+  return axios
+    .get('/cards/api/oneType', {
+      params: {
+        id,
+      },
+    })
+    .then(res =>
+      dispatch({
+        type: CHANGE_ACTIVE_SUCCESS,
+        payload: { idType: id, cards: res.data.cards },
+      }),
+    )
+    .catch(err =>
+      dispatch({
+        type: CHANGE_ACTIVE_FAILURE,
+        payload: { errorType: err.response.data.errorType },
+      }),
+    );
+};
