@@ -17,8 +17,7 @@ class MenuDeleteType extends Component {
   componentDidMount() {
     const { types } = this.props;
     const { activeType } = this.state;
-
-    if (activeType === '' && types) {
+    if (activeType === '' && types.length) {
       this.setState({ activeType: types[0].id });
     }
   }
@@ -30,16 +29,20 @@ class MenuDeleteType extends Component {
 
   handleSubmit = () => {
     const { deleteTypeAction } = this.props;
-    const { activeType } = this.state;
+    let { activeType } = this.state;
+    const { types } = this.props;
+
+    if (!types.length) return setErrorStatement({ errorType: 'chooseType' });
+
+    if (activeType === '') activeType = types[0].id;
 
     const notValid = validator({ id: activeType });
-    if (notValid) {
-      setErrorStatement(notValid);
-    } else {
-      deleteTypeAction(activeType);
-      const { types } = this.props;
-      this.setState({ activeType: types[1].id });
-    }
+    if (notValid) return setErrorStatement(notValid);
+
+    deleteTypeAction(activeType);
+
+    if (!types.length - 1) return this.setState({ activeType: '' });
+    return this.setState({ activeType: types[1].id });
   };
 
   render() {
@@ -55,7 +58,7 @@ class MenuDeleteType extends Component {
     return (
       <div className={propClasses}>
         <div>
-          Wybierz sfoją fiszkę:
+          Wybierz swoją fiszkę:
           <select
             value={activeType}
             defaultChecked

@@ -20,7 +20,7 @@ class MenuChangeType extends Component {
     const { types } = this.props;
     const { activeType } = this.state;
 
-    if (activeType === '' && types) {
+    if (activeType === '' && types.length) {
       this.setState({ activeType: types[0].id });
     }
   }
@@ -64,7 +64,7 @@ class MenuChangeType extends Component {
     return (
       <div className={propClasses}>
         <div>
-          Wybierz sfoją fiszkę:
+          Wybierz swoją fiszkę:
           <select value={type} defaultChecked onChange={this.handleChangeType}>
             {typesOptions}
           </select>

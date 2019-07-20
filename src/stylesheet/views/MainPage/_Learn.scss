@@ -8,6 +8,16 @@
         padding: 0px 10px;
     }
 
+    .MP__learn_error {
+        width: 100%;
+        padding: 5px;
+        margin: 10px 0px;
+        text-align: center;
+        background-color: $red-second;
+        color: white;
+        font-size: $font-m;
+    }
+
     .MP__learn_addWrapper {
         display: flex;
         flex-direction: column;

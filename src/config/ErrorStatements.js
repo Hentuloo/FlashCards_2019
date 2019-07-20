@@ -22,5 +22,7 @@ export default {
     maxNumberTypes: 'Przekroczona liczba Typów',
     maxNumberCards: 'Maksymalna liczba fiszek w tym rodzaju!',
     cardNotExist: 'Nie znaleziono takiej karty!',
+
+    chooseType: 'Wybierz odpowiedni typ fiszek!',
   },
 };

@@ -10,25 +10,28 @@ const drawRandomCard = cards => {
 
 class Draw extends Component {
   state = {
-    first: '',
-    second: '',
+    word: '',
+    description: '',
     ShowSecondCard: true,
     animationResetKey: Math.random(),
   };
 
   handleClick = () => {
-    const { cards } = this.props;
-    const { first, second, ShowSecondCard } = this.state;
-    if (cards) {
+    const { active, cards } = this.props;
+    const { word, description, ShowSecondCard } = this.state;
+    if (active && cards.length) {
       if (!ShowSecondCard) return this.setState({ ShowSecondCard: true });
 
       let randomCard;
       do {
         randomCard = drawRandomCard(cards);
-      } while (randomCard.first === first && randomCard.second === second);
+      } while (
+        randomCard.word === word &&
+        randomCard.description === description
+      );
       this.setState({
-        first: randomCard.first,
-        second: randomCard.second,
+        word: randomCard.word,
+        description: randomCard.description,
         ShowSecondCard: false,
         animationResetKey: Math.random(),
       });
@@ -37,21 +40,27 @@ class Draw extends Component {
   };
 
   render() {
-    const { active } = this.props;
-    const { first, second, ShowSecondCard, animationResetKey } = this.state;
+    const { active, cards } = this.props;
+    const { word, description, ShowSecondCard, animationResetKey } = this.state;
+
+    const drawStatement = () => {
+      if (!active) return 'Wybierz dział';
+      if (!cards.length) return 'Dodaj Pierwsze fiszki';
+      if (word) return word;
+      return 'Losuj!';
+    };
+
     return (
       <>
         <div className="MP__draw_Window">
-          <span className="MP__draw_Window_span">
-            {!active ? 'Wybierz dział' : first || 'Losuj!'}
-          </span>
+          <span className="MP__draw_Window_span">{drawStatement()}</span>
         </div>
         <div className="MP__draw_Window">
           <span
             className="MP__draw_Window_span MP__draw_Window_span--animated"
             key={animationResetKey}
           >
-            {ShowSecondCard && second}
+            {ShowSecondCard && description}
           </span>
         </div>
         <MainButton

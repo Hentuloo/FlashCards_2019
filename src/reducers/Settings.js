@@ -16,6 +16,10 @@ import {
   FETCH_TYPES_FAILURE,
   CHANGE_ACTIVE_SUCCESS,
   CHANGE_ACTIVE_FAILURE,
+  ADD_WORDS_SUCCESS,
+  ADD_WORDS_FAILURE,
+  DELETE_WORDS_SUCCESS,
+  DELETE_WORDS_FAILURE,
 } from 'actions';
 
 const initialState = { active: false, errorType: false, loading: false };
@@ -50,6 +54,8 @@ export default (state = initialState, action) => {
     case FETCH_TYPES_SUCCESS:
     case LOGIN_SUCCESS:
     case AUTHENTICATE_SUCCESS:
+    case ADD_WORDS_SUCCESS:
+    case DELETE_WORDS_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -62,6 +68,8 @@ export default (state = initialState, action) => {
     case FETCH_TYPES_FAILURE:
     case LOGIN_FAILURE:
     case AUTHENTICATE_FAILURE:
+    case ADD_WORDS_FAILURE:
+    case DELETE_WORDS_FAILURE:
       return {
         ...state,
         loading: false,

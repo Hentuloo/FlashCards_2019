@@ -16,7 +16,10 @@ axios.interceptors.response.use(null, error => {
 
 // export everything from authActions and cardsActions
 export * from './authActions';
+export * from './typeActions';
 export * from './cardsActions';
+
+export const REQUEST = 'FETCH_TYPES_REQUEST';
 
 // ACTIONS FOR ANY PAGE
 export const ERROR_STATEMENT_SET = 'ERROR_STATEMENT_SET';
