@@ -46,12 +46,11 @@ LearnTable.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
   deleteWordAction: PropTypes.func.isRequired,
   idType: PropTypes.string,
-  setError: PropTypes.string,
+  setError: PropTypes.func.isRequired,
 };
 LearnTable.defaultProps = {
   data: null,
   idType: null,
-  setError: null,
 };
 
 const mapDispatchToProps = { deleteWordAction: deleteWord };

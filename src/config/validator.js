@@ -3,6 +3,11 @@ import validator from 'validator';
 export default props => {
   const keys = Object.keys(props);
   const validResponse = keys.map(key => {
+    if (props[key] === undefined)
+      return {
+        errorType: 'dataWrong',
+      };
+
     switch (key) {
       case 'id':
       case 'idType':
@@ -26,7 +31,12 @@ export default props => {
             errorType: 'titleEmpty',
           };
         }
-        if (/[^A-Za-z\d\s]/.test(props[key])) {
+        if (props[key].length > 15 || props[key].length < 3) {
+          return {
+            errorType: 'titleCharactersNumber',
+          };
+        }
+        if (/^[\p{L}A-Za-z\d\s]/.test(props[key])) {
           return {
             errorType: 'titleAlpaNum',
           };
@@ -51,12 +61,24 @@ export default props => {
       case 'cards': {
         for (let i = 0; i < props[key].length; i += 1) {
           const { word, description } = props[key][i];
+          if (
+            word.length > 60 ||
+            description.length > 60 ||
+            word.length < 3 ||
+            description.length < 3
+          )
+            return {
+              errorType: 'cardCharactersNumber',
+            };
           if (validator.isEmpty(word) || validator.isEmpty(description)) {
             return {
               errorType: 'cardEmpty',
             };
           }
-          if (/[^A-Za-z\d\s]/.test(word) || /[^A-Za-z\d\s]/.test(description)) {
+          if (
+            /^[\s\d\p{L}()[\] ,.!?/|:"']+$/i.test(word) ||
+            /^[\s\d\p{L}()[\] ,.!?/|:"']+$/i.test(description)
+          ) {
             return {
               errorType: 'cardAlpaNum',
             };

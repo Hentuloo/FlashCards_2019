@@ -55,10 +55,11 @@ export const authenticate = (email, password) => dispatch => {
 
       history.push(Constants.PATHS.login);
     })
-    .catch(err =>
+    .catch(err => {
+      const { response } = err;
       dispatch({
         type: AUTHENTICATE_FAILURE,
-        payload: err.response.data,
-      }),
-    );
+        payload: { errorType: response.data.errors },
+      });
+    });
 };

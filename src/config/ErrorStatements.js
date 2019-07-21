@@ -10,6 +10,11 @@ export default {
     cardEmpty: 'Dane są niekompletne!',
     cardAlpaNum: 'Dane posiadają niepożądane znaki!',
 
+    UserExistsError: 'Taki użytkownik już istnieje!',
+
+    cardCharactersNumber: 'min:3 znaki max:60 znaków',
+    titleCharactersNumber: 'min:3 znaki max:15 znaków',
+
     idEmpty: 'Coś poszło nie tak',
     idAlpaNum: 'Coś poszło nie tak',
     loginFailure: 'Nie ma takiego użytkownika',
