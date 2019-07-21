@@ -29,12 +29,22 @@ class Draw extends Component {
         randomCard.word === word &&
         randomCard.description === description
       );
-      this.setState({
-        word: randomCard.word,
-        description: randomCard.description,
-        ShowSecondCard: false,
-        animationResetKey: Math.random(),
-      });
+      if (Math.random() >= 0.5) {
+        // Random language in first step
+        this.setState({
+          word: randomCard.word,
+          description: randomCard.description,
+          ShowSecondCard: false,
+          animationResetKey: Math.random(),
+        });
+      } else {
+        this.setState({
+          word: randomCard.description,
+          description: randomCard.word,
+          ShowSecondCard: false,
+          animationResetKey: Math.random(),
+        });
+      }
     }
     return null;
   };

@@ -78,6 +78,7 @@ class MenuChangeType extends Component {
             placeholder="np. sport"
             value={title}
             onChange={this.handleChange}
+            autoComplete="off"
           />
         </label>
 

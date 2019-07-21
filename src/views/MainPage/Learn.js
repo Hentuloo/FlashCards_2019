@@ -20,6 +20,7 @@ const InputsCounter = (onChange, count) => {
           name="word"
           type="text"
           placeholder="word"
+          autoComplete="off"
         />
         <input
           onChange={onChange}
@@ -27,6 +28,7 @@ const InputsCounter = (onChange, count) => {
           name="description"
           type="text"
           placeholder="słowo"
+          autoComplete="off"
         />
       </div>,
     );

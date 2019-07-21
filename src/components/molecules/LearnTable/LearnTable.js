@@ -8,7 +8,10 @@ import validator from 'config/validator';
 import MainButton from 'components/atoms/MainButton/MainButton';
 
 class LearnTable extends Component {
-  state = {};
+  state = {
+    leftHide: false,
+    rightHide: false,
+  };
 
   handleClickDelete = id => {
     const { deleteWordAction, idType, setError } = this.props;
@@ -19,15 +22,22 @@ class LearnTable extends Component {
     return deleteWordAction(idType, id);
   };
 
+  handleHidePartOfTable = part => {
+    this.setState(prevState => {
+      return { [part]: !prevState[part] };
+    });
+  };
+
   render() {
     const { data } = this.props;
+    const { leftHide, rightHide } = this.state;
     if (data.length) {
       const TableItems = data.map(card => {
         const { _id: id, word, description } = card;
         return (
           <div key={id} className="MP__learn_tableItem">
-            <span>{word}</span>
-            <span>{description}</span>
+            <span className={leftHide ? 'hidden' : ''}>{word}</span>
+            <span className={rightHide ? 'hidden' : ''}>{description}</span>
             <MainButton
               icon="icon-trash"
               value="Usuń"
@@ -36,7 +46,25 @@ class LearnTable extends Component {
           </div>
         );
       });
-      return <div className="MP__learn_tableWrapper">{TableItems}</div>;
+      return (
+        <div className="MP__learn_tableWrapper">
+          {TableItems}{' '}
+          <MainButton
+            icon={leftHide ? 'icon-eye' : 'icon-eye-off'}
+            value="schowaj"
+            className="MP__learn_hideHalfBTN"
+            name="left"
+            onClick={() => this.handleHidePartOfTable('leftHide')}
+          />
+          <MainButton
+            icon={rightHide ? 'icon-eye' : 'icon-eye-off'}
+            value="schowaj"
+            className="MP__learn_hideHalfBTN"
+            name="right"
+            onClick={() => this.handleHidePartOfTable('rightHide')}
+          />
+        </div>
+      );
     }
     return <div className="MP__learn_tableWrapper">Dodaj Pierwszą fiszkę!</div>;
   }
