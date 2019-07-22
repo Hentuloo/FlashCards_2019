@@ -31,12 +31,14 @@ export const editType = (id, title, icon) => dispatch => {
         payload: { id, title, icon },
       }),
     )
-    .catch(err =>
+    .catch(err => {
+      const { errorType, name } = err.response.data;
+      const error = errorType || name;
       dispatch({
         type: EDIT_TYPE_FAILURE,
-        payload: err.response,
-      }),
-    );
+        payload: { errorType: error },
+      });
+    });
 };
 export const deleteType = id => dispatch => {
   dispatch({
