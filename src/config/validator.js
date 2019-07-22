@@ -36,7 +36,7 @@ export default props => {
             errorType: 'titleCharactersNumber',
           };
         }
-        if (/^[\p{L}A-Za-z\d\s]/.test(props[key])) {
+        if (/[^\p{L}A-Za-z\d\s]/.test(props[key])) {
           return {
             errorType: 'titleAlpaNum',
           };
