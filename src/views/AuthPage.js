@@ -76,7 +76,7 @@ class AuthPage extends Component {
             >
               <div className="AuthPage__inputWrapper">
                 <input
-                  type="text"
+                  type="email"
                   name="email"
                   className="AuthPage__input"
                   placeholder="e-mail"

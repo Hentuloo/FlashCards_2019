@@ -7,7 +7,14 @@ axios.defaults.headers.common = {
   Authorization: `bearer ${localStorage.getItem('flashCardsToken')}`,
 };
 axios.interceptors.response.use(null, error => {
-  if (error.response.status === 401) {
+  const { status, config } = error.response;
+  if (status === 401) {
+    if (config) {
+      // if is request from login or reqister page
+      const reqData = JSON.parse(config.data);
+      const { email, password } = reqData;
+      if (email && password) return Promise.reject(error);
+    }
     localStorage.removeItem('token');
     history.push(Constants.PATHS.login);
   }

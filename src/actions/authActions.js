@@ -29,9 +29,10 @@ export const loginUser = (email, password) => dispatch => {
     .catch(err => {
       const respnse = err.response.data;
       let errorType = err.response.data;
+
       if (respnse === 'Bad Request') errorType = 'dataWrong';
       if (respnse === 'Unauthorized') errorType = 'loginFailure';
-      dispatch({
+      return dispatch({
         type: LOGIN_FAILURE,
         payload: { errorType },
       });
@@ -56,10 +57,11 @@ export const authenticate = (email, password) => dispatch => {
       history.push(Constants.PATHS.login);
     })
     .catch(err => {
-      const { response } = err;
+      const { errorType, name } = err.response.data;
+      const error = errorType || name;
       dispatch({
         type: AUTHENTICATE_FAILURE,
-        payload: { errorType: response.data.errors },
+        payload: { errorType: error },
       });
     });
 };
