@@ -5,6 +5,7 @@ import { REQUEST } from 'actions';
 
 export const AUTHENTICATE_SUCCESS = 'AUTHENTICATE_SUCCESS';
 export const AUTHENTICATE_FAILURE = 'AUTHENTICATE_FAILURE';
+
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
