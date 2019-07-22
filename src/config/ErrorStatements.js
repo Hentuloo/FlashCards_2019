@@ -1,5 +1,7 @@
 export default {
   TYPES: {
+    sthWrong: 'Coś poszło nie tak! spróbuj ponownie...',
+
     emailWrong: 'Źle podany email!',
     passwordAlpaNum: 'Źle podany password!',
     titleEmpty: 'Pole tytułu jest puste',

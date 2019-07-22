@@ -1,4 +1,6 @@
 import axios from 'axios';
+import history from 'config/history';
+import Constants from 'config/Constants';
 
 import { REQUEST } from 'actions';
 
@@ -87,12 +89,14 @@ export const fetchTypes = () => dispatch => {
         payload: res.data,
       });
     })
-    .catch(err =>
+    .catch(() => {
       dispatch({
         type: FETCH_TYPES_FAILURE,
-        payload: { errorType: err.response.data.errorType },
-      }),
-    );
+        payload: { errorType: 'sthWrong' },
+      });
+      localStorage.removeItem('flashCardsToken');
+      history.push(Constants.PATHS.login);
+    });
 };
 
 export const changeActive = id => dispatch => {
