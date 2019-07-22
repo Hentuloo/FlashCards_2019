@@ -10,7 +10,6 @@ const Seo = ({ description, keywords, title }) => {
       <meta httpEquiv="Content-type" content="text/html;charset=UTF-8" />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <link rel="index" title="Strona główna" href="#" />
       <title>{title}</title>
       <link rel="shortcut icon" type="image/png" href={Favico} />
     </Helmet>
