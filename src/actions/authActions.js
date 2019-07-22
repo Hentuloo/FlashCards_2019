@@ -1,17 +1,16 @@
 import axios from 'axios';
 import history from 'config/history';
 import Constants from 'config/Constants';
+import { REQUEST } from 'actions';
 
-export const AUTHENTICATE_REQUEST = 'AUTHENTICATE_REQUEST';
 export const AUTHENTICATE_SUCCESS = 'AUTHENTICATE_SUCCESS';
 export const AUTHENTICATE_FAILURE = 'AUTHENTICATE_FAILURE';
-export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
 export const loginUser = (email, password) => dispatch => {
   dispatch({
-    type: LOGIN_REQUEST,
+    type: REQUEST,
   });
   return axios
     .post('/user/api/login', {
@@ -40,7 +39,7 @@ export const loginUser = (email, password) => dispatch => {
 
 export const authenticate = (email, password) => dispatch => {
   dispatch({
-    type: AUTHENTICATE_REQUEST,
+    type: REQUEST,
   });
   return axios
     .post('/user/api/new', {
