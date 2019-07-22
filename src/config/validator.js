@@ -50,7 +50,7 @@ export default props => {
             errorType: 'iconEmpty',
           };
         }
-        if (!/^[a-z0-9_ -]+$/i.test(props[key])) {
+        if (!/^[a-z0-9_-]+$/i.test(props[key])) {
           return {
             errorType: 'iconWrong',
           };
