@@ -31,5 +31,8 @@ export default {
     cardNotExist: 'Nie znaleziono takiej karty!',
 
     chooseType: 'Wybierz odpowiedni typ fiszek!',
+
+    notAvaliableAction: 'Ta operacja nie jest jeszcze dostępna',
+    deleteUserFailure: 'Coś poszło nie tak, powtórz email',
   },
 };

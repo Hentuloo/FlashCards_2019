@@ -17,11 +17,9 @@ class MenuPagesList extends Component {
     const { className } = this.props;
     return (
       <nav className={className}>
+        <li />
         <li>
-          <a href="#prem">Kup premke</a>
-        </li>
-        <li>
-          <a href="#sett">Ustawienia</a>
+          <a href={Constants.PATHS.settings}>Ustawienia</a>
         </li>
         <li>
           <a href="#logout" onClick={this.handleLogOut}>

@@ -9,6 +9,8 @@ export const AUTHENTICATE_FAILURE = 'AUTHENTICATE_FAILURE';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
+export const USER_DELETE_FAILURE = 'USER_DELETE_FAILURE';
+
 export const loginUser = (email, password) => dispatch => {
   dispatch({
     type: REQUEST,
@@ -62,6 +64,28 @@ export const authenticate = (email, password) => dispatch => {
       dispatch({
         type: AUTHENTICATE_FAILURE,
         payload: { errorType: error },
+      });
+    });
+};
+
+export const deleteUser = email => dispatch => {
+  dispatch({
+    type: REQUEST,
+  });
+  return axios
+    .delete('/user/api/delete', { data: { email } })
+    .then(() => {
+      localStorage.removeItem('flashCardsToken');
+      history.push(Constants.PATHS.signup);
+    })
+    .catch(err => {
+      const respnse = err.response.data;
+      let { errorType } = err.response.data;
+      if (respnse === 'Bad Request') errorType = 'dataWrong';
+      if (respnse === 'Unauthorized') errorType = 'loginFailure';
+      return dispatch({
+        type: USER_DELETE_FAILURE,
+        payload: { errorType },
       });
     });
 };
