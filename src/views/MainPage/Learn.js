@@ -89,6 +89,14 @@ class Learn extends Component {
     return this.setState({ errorType: false });
   };
 
+  handleClickClearState = () => {
+    this.setState({
+      errorType: false,
+      counter: 1,
+      inputs: [{ id: 0, word: '', description: '' }],
+    });
+  };
+
   render() {
     const { singleType } = this.props;
     const { counter, errorType } = this.state;
@@ -98,11 +106,18 @@ class Learn extends Component {
           <div className="MP__learn_addInputs">
             {InputsCounter(this.handleChange, counter)}
           </div>
-          <MainButton
-            icon="icon-plus"
-            value="dodaj typ fiszek"
-            onClick={this.handleClickNewInput}
-          />
+          <div className="MP__learn_addButtons">
+            <MainButton
+              icon="icon-plus"
+              value="dodaj typ fiszek"
+              onClick={this.handleClickNewInput}
+            />
+            <MainButton
+              icon="icon-magic"
+              value="Przywróć ustawienia początkowe"
+              onClick={this.handleClickClearState}
+            />
+          </div>
           <SquareButton
             type="submit"
             onClick={this.handleSubmitNewWords}

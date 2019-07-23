@@ -7,7 +7,12 @@ const MainButton = props => {
   const propClasses = classNames('mainButton', className);
 
   return (
-    <button type="button" className={propClasses} onClick={onClick}>
+    <button
+      type="button"
+      title={value}
+      className={propClasses}
+      onClick={onClick}
+    >
       <i className={icon} />
       <span>{value}</span>
     </button>

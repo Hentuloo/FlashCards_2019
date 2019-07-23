@@ -26,6 +26,10 @@
         align-content: center;
         margin: 30px 0px;
 
+        .MP__learn_addButtons {
+            margin: 0px auto;
+        }
+
         .MP__learn_addInputs {
             margin: 0px auto;
 
@@ -61,7 +65,7 @@
         .SquareButton {
             flex-grow: 1;
             padding: 4px;
-            margin: 4px;
+            margin: 4px auto;
             background-color: $green-third;
             border: 2px solid $green-first;
             color: white;
