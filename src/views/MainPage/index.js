@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { fetchTypes } from 'actions';
 
 import MainLayout from 'layouts/MainLayout';
-import { ViewsMenuMobile } from 'components/organisms';
+import { ViewsMenuMobile, Helmet } from 'components/organisms';
 
 import Types from './Types';
 import Draw from './Draw';
@@ -34,36 +34,43 @@ class MainPage extends Component {
   render() {
     const { activeSection } = this.state;
     return (
-      <MainLayout>
-        <>
-          <main className="MP__wrapper">
-            <div
-              className={`MP__section  MP__draw 
+      <>
+        <Helmet
+          description="Przyjemna nauka dowolnego języka"
+          keywords="fiszki online nauka angielskiego zgadywanie słów"
+          title="Fiszki online"
+        />
+        <MainLayout>
+          <>
+            <main className="MP__wrapper">
+              <div
+                className={`MP__section  MP__draw 
               ${activeSection === 'draw' ? 'MP__section--active' : ''}`}
-            >
-              <Draw />
-            </div>
-            <div
-              className={`MP__section  MP__types 
+              >
+                <Draw />
+              </div>
+              <div
+                className={`MP__section  MP__types 
               ${activeSection === 'types' ? 'MP__section--active' : ''}`}
-            >
-              <Types />
-            </div>
-            <div
-              className={`MP__section  MP__learn 
+              >
+                <Types />
+              </div>
+              <div
+                className={`MP__section  MP__learn 
               ${activeSection === 'learn' ? 'MP__section--active' : ''}`}
-            >
-              <Learn />
-            </div>
-          </main>
-          <nav className="MP__sectionNav_Mobile">
-            <ViewsMenuMobile
-              activeSection={activeSection}
-              action={this.handleChangeSection}
-            />
-          </nav>
-        </>
-      </MainLayout>
+              >
+                <Learn />
+              </div>
+            </main>
+            <nav className="MP__sectionNav_Mobile">
+              <ViewsMenuMobile
+                activeSection={activeSection}
+                action={this.handleChangeSection}
+              />
+            </nav>
+          </>
+        </MainLayout>
+      </>
     );
   }
 }

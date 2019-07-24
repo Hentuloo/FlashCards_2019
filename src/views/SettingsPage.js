@@ -8,6 +8,7 @@ import { deleteUser, setErrorStatement } from 'actions';
 import Constants from 'config/Constants';
 import Error from 'config/ErrorStatements';
 
+import { Helmet } from 'components/organisms';
 import { Statement } from 'components/atoms';
 import AuthLayout from '../layouts/AuthLayout';
 
@@ -51,46 +52,53 @@ class AuthPage extends Component {
     const { errorType } = this.props;
     const { email, hideEmailField } = this.state;
     return (
-      <AuthLayout>
-        <div className="AuthPage">
-          {errorType && (
-            <Statement
-              className="Statement_failure"
-              title={Error.TYPES[errorType]}
-            />
-          )}
-          <div className="AuthPage__wrapper">
-            <h1 className="AuthPage__header">Ustawienia:</h1>
-            {!hideEmailField && (
-              <input
-                type="email"
-                name="email"
-                className="AuthPage__input"
-                placeholder="Potwierdź email"
-                value={email}
-                onChange={this.handleInputValue}
+      <>
+        <Helmet
+          description="Ustawienia"
+          keywords="fiszki online nauka angielskiego zgadywanie słów"
+          title="Ustawienia"
+        />
+        <AuthLayout>
+          <div className="AuthPage">
+            {errorType && (
+              <Statement
+                className="Statement_failure"
+                title={Error.TYPES[errorType]}
               />
             )}
-            <button
-              type="submit"
-              className="AuthPage__submit"
-              onClick={this.handleClickDelete}
-            >
-              Chcę usunąć konto
-            </button>
-            <button
-              type="submit"
-              className="AuthPage__submit"
-              onClick={this.handleClickBuy}
-            >
-              Chcę kupić premium
-            </button>
-            <Link to={Constants.PATHS.root} className="AuthPage__link">
-              POWRÓT
-            </Link>
+            <div className="AuthPage__wrapper">
+              <h1 className="AuthPage__header">Ustawienia:</h1>
+              {!hideEmailField && (
+                <input
+                  type="email"
+                  name="email"
+                  className="AuthPage__input"
+                  placeholder="Potwierdź email"
+                  value={email}
+                  onChange={this.handleInputValue}
+                />
+              )}
+              <button
+                type="submit"
+                className="AuthPage__submit"
+                onClick={this.handleClickDelete}
+              >
+                Chcę usunąć konto
+              </button>
+              <button
+                type="submit"
+                className="AuthPage__submit"
+                onClick={this.handleClickBuy}
+              >
+                Chcę kupić premium
+              </button>
+              <Link to={Constants.PATHS.root} className="AuthPage__link">
+                POWRÓT
+              </Link>
+            </div>
           </div>
-        </div>
-      </AuthLayout>
+        </AuthLayout>
+      </>
     );
   }
 }
