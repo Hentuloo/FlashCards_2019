@@ -82,49 +82,50 @@ class Menu extends Component {
     } = this.state;
     return (
       <div className="menu">
-        <div className="menu__panelWrapper">
-          <MenuPagesList
-            className={
-              HamburgerActive
-                ? 'menu__Pageslist menu__Pageslist--active'
-                : 'menu__Pageslist'
-            }
-          />
-          {ButtonAdd && (
-            <MenuAddType
-              closeWindow={this.handleClickForClose}
-              className="menu__Operation"
-            />
-          )}
-          {ButtonDelete && (
-            <MenuDeleteType
-              closeWindow={this.handleClickForClose}
-              className="menu__Operation"
-            />
-          )}
-          {ButtonChange && (
-            <MenuChangeType
-              closeWindow={this.handleClickForClose}
-              className="menu__Operation"
-            />
-          )}
-        </div>
-        <div className="menu__Operation_buttons">
+        <MenuPagesList
+          className={
+            HamburgerActive ? 'menuPages menuPages--mobileActive' : 'menuPages'
+          }
+        />
+        <div className="menuButtons">
           <MainButton
+            className="menuButtons__element"
             icon="icon-plus"
             value="dodaj typ fiszek"
             onClick={this.handleClickButtonAdd}
           />
           <MainButton
+            className="menuButtons__element"
             icon="icon-minus"
             value="usuń typ fiszek"
             onClick={this.handleClickButtonDelete}
           />
           <MainButton
+            className="menuButtons__element"
             icon="icon-cog"
             value="zmodyfikuj typ fiszek"
             onClick={this.handleClickButtonChange}
           />
+        </div>
+        <div className="menuPanel">
+          {ButtonAdd && (
+            <MenuAddType
+              closeWindow={this.handleClickForClose}
+              className="menuPanel__operation"
+            />
+          )}
+          {ButtonDelete && (
+            <MenuDeleteType
+              closeWindow={this.handleClickForClose}
+              className="menuPanel__operation"
+            />
+          )}
+          {ButtonChange && (
+            <MenuChangeType
+              closeWindow={this.handleClickForClose}
+              className="menuPanel__operation"
+            />
+          )}
         </div>
         <Hamburger
           onClick={this.handleClickHamburger}

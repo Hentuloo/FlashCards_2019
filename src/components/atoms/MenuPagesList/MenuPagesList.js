@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import history from 'config/history';
 import Constants from 'config/Constants';
@@ -17,12 +18,17 @@ class MenuPagesList extends Component {
     const { className } = this.props;
     return (
       <nav className={className}>
-        <li />
-        <li>
-          <a href={Constants.PATHS.settings}>Ustawienia</a>
+        <li className="menuPages__listElement">
+          <Link className="menuPages__link" to={Constants.PATHS.settings}>
+            Ustawienia
+          </Link>
         </li>
-        <li>
-          <a href="#logout" onClick={this.handleLogOut}>
+        <li className="menuPages__listElement">
+          <a
+            className="menuPages__link"
+            href="#logout"
+            onClick={this.handleLogOut}
+          >
             Wyloguj
           </a>
         </li>

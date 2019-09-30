@@ -40,10 +40,11 @@ class MenuAddType extends Component {
     const { IconActive, title } = this.state;
     return (
       <div className={propClasses}>
-        <label htmlFor="add__type_title">
+        <label htmlFor="cardName" className="menuPanel__label">
           Nazwa:{' '}
           <input
-            id="add__type_title"
+            id="cardName"
+            className="menuPanel__input"
             type="text"
             name="title"
             placeholder="np. sport"
@@ -53,21 +54,21 @@ class MenuAddType extends Component {
           />
         </label>
 
-        <div className="menu__selectIcon">
+        <div className="menuPanel__iconsWrapper">
           <ChoseIcon active={IconActive} onClick={this.handleClickIcon} />
         </div>
         <SquareButton
+          className="menuPanel__submit"
           value="Dodaj nową fiszkę!"
-          className="menu__addButton"
           onClick={this.handleSubmit}
         />
         {errorType && (
-          <span className="menu__Operation__wrong">
+          <span className="menuPanel__wrongStatement">
             {ErrorStatements.TYPES[errorType]}
           </span>
         )}
         <MainButton
-          className="menu__closeButton"
+          className="menuPanel__closeButton"
           icon="icon-cancel-circled"
           onClick={closeWindow}
         />

@@ -12,7 +12,7 @@
     cursor: pointer;
     position: relative;
 
-    span {
+    &__span {
         display: none;
         position: absolute;
         width: 150%;
@@ -30,7 +30,7 @@
     }
 
     &--withText {
-        span {
+        &__span {
             display: block;
         }
     }

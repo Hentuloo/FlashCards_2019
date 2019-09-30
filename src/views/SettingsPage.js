@@ -12,7 +12,7 @@ import { Helmet } from 'components/organisms';
 import { Statement } from 'components/atoms';
 import AuthLayout from '../layouts/AuthLayout';
 
-class AuthPage extends Component {
+class AuthBox extends Component {
   state = {
     hideEmailField: true,
     email: '',
@@ -59,20 +59,20 @@ class AuthPage extends Component {
           title="Ustawienia"
         />
         <AuthLayout>
-          <div className="AuthPage">
+          <div className="AuthBox">
             {errorType && (
               <Statement
                 className="Statement_failure"
                 title={Error.TYPES[errorType]}
               />
             )}
-            <div className="AuthPage__wrapper">
-              <h1 className="AuthPage__header">Ustawienia:</h1>
+            <div className="AuthBox__wrapper">
+              <h1 className="AuthBox__header">Ustawienia:</h1>
               {!hideEmailField && (
                 <input
                   type="email"
                   name="email"
-                  className="AuthPage__input"
+                  className="AuthBox__input"
                   placeholder="Potwierdź email"
                   value={email}
                   onChange={this.handleInputValue}
@@ -80,19 +80,19 @@ class AuthPage extends Component {
               )}
               <button
                 type="submit"
-                className="AuthPage__submit"
+                className="AuthBox__submit"
                 onClick={this.handleClickDelete}
               >
                 Chcę usunąć konto
               </button>
               <button
                 type="submit"
-                className="AuthPage__submit"
+                className="AuthBox__submit"
                 onClick={this.handleClickBuy}
               >
                 Chcę kupić premium
               </button>
-              <Link to={Constants.PATHS.root} className="AuthPage__link">
+              <Link to={Constants.PATHS.root} className="AuthBox__link">
                 POWRÓT
               </Link>
             </div>
@@ -111,16 +111,16 @@ const mapDispatchToProps = {
   setErrorAction: setErrorStatement,
 };
 
-AuthPage.propTypes = {
+AuthBox.propTypes = {
   deleteUserAction: PropTypes.func.isRequired,
   setErrorAction: PropTypes.func.isRequired,
   errorType: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
-AuthPage.defaultProps = {
+AuthBox.defaultProps = {
   errorType: false,
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(AuthPage);
+)(AuthBox);

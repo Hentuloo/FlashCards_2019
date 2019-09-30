@@ -7,7 +7,7 @@ const AuthLayout = ({ children, loading }) => {
   return (
     <>
       {loading && <LoadingBar />}
-      <div className="AuthPage__Layout">{children}</div>
+      <div className="AuthLayout">{children}</div>
     </>
   );
 };

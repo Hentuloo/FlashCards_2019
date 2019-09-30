@@ -18,10 +18,11 @@
   @import './_variables.scss';
 
   // COMPONENTS
-  @import './_components.scss';
+  @import './components/index.scss';
+
 
   // VIEWS
-  @import './views/_AuthPage.scss';
+  @import './views/_AuthBox.scss';
   @import './views/MainPage/index.scss';
 
   // FONTELLO

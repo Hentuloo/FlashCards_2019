@@ -65,28 +65,28 @@ class AuthPage extends Component {
           title="Zaloguj się"
         />
         <AuthLayout>
-          <div className="AuthPage">
+          <div className="AuthBox">
             {errorType && (
               <Statement
                 className="Statement_failure"
                 title={Error.TYPES[errorType]}
               />
             )}
-            <div className="AuthPage__wrapper">
-              <h1 className="AuthPage__header">
+            <div className="AuthBox__wrapper">
+              <h1 className="AuthBox__header">
                 {pageType === signup && 'Załóż konto!'}
                 {pageType === login && 'Zaloguj się!'}
               </h1>
               <form
                 method="post"
-                className="AuthPage__form"
+                className="AuthBox__form"
                 onSubmit={this.handleSubmit}
               >
-                <div className="AuthPage__inputWrapper">
+                <div className="BasicForm__inputWrapper">
                   <input
                     type="email"
                     name="email"
-                    className="AuthPage__input"
+                    className="AuthBox__input"
                     placeholder="e-mail"
                     value={email}
                     onChange={this.handleInputValue}
@@ -94,23 +94,23 @@ class AuthPage extends Component {
                   <input
                     type="password"
                     name="password"
-                    className="AuthPage__input"
+                    className="AuthBox__input"
                     placeholder="password"
                     value={password}
                     onChange={this.handleInputValue}
                   />
                 </div>
-                <button type="submit" className="AuthPage__submit">
+                <button type="submit" className="AuthBox__submit">
                   {pageType === login && 'Do fiszek!'}
                   {pageType === signup && 'Nowe konto!'}
                 </button>
                 {pageType === signup && (
-                  <Link to={Constants.PATHS.login} className="AuthPage__link">
+                  <Link to={Constants.PATHS.login} className="AuthBox__link">
                     Chcę się zalogować
                   </Link>
                 )}
                 {pageType === login && (
-                  <Link to={Constants.PATHS.signup} className="AuthPage__link">
+                  <Link to={Constants.PATHS.signup} className="AuthBox__link">
                     Chcę utworzyć konto
                   </Link>
                 )}

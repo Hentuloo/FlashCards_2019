@@ -87,4 +87,3 @@ export default (state = [], action) => {
       return state;
   }
 };
-// SŁÓWKO USUWA SIĘ TYLKO Z BAZY A NIE WIDZĆ ŻE SIĘ USUNEŁO Z EKRANU

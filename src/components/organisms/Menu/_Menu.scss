@@ -24,54 +24,15 @@
         border-top: 2px solid $white;
     }
 
-    .menu__hamburger {
+    &__hamburger {
         align-self: flex-end;
         margin: 10px 5px;
-    }
-
-
-    .menu__Pageslist {
-        display: none;
-        list-style: none;
-        text-align: center;
-        font-size: $font-l;
-        padding-top: 0px;
-        line-height: 65px;
-
-        &--active {
-            display: block;
-        }
-
-        li {
-            a {
-                display: block;
-                width: 100%;
-                height: 100%;
-                padding: 5px 0px;
-                color: $white;
-                text-decoration: none;
-            }
-        }
     }
 
     @media (min-width: $breakPoint-mobile) {
         justify-content: flex-start;
 
-        .menu__Pageslist {
-            position: fixed;
-            display: flex;
-            height: 76px;
-            top: 0%;
-            right: 0%;
-
-            li {
-                a {
-                    padding: 5px 15px;
-                }
-            }
-        }
-
-        .menu__hamburger {
+        &__hamburger {
             display: none;
         }
     }

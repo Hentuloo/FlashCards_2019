@@ -1,0 +1,43 @@
+.menuPages {
+    display: none;
+    position: absolute;
+    flex-grow: 1;
+    width: 100%;
+    top: 100px;
+    line-height: 65px;
+    text-align: center;
+    list-style: none;
+    font-size: $font-l;
+    background-color: $green-first;
+
+    @media (min-width: $breakPoint-mobile) {
+        position: fixed;
+        display: flex;
+        width: auto;
+        height: 76px;
+        top: 0%;
+        right: 0%;
+    }
+
+    &--mobileActive {
+        display: block;
+
+        @media (min-width: $breakPoint-mobile) {
+            display: flex;
+        }
+    }
+
+    &__link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 5px 0px;
+        color: $white;
+        text-decoration: none;
+
+        @media (min-width: $breakPoint-mobile) {
+            padding: 5px 15px;
+        }
+    }
+
+}

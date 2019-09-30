@@ -57,9 +57,10 @@ class MenuDeleteType extends Component {
     ));
     return (
       <div className={propClasses}>
-        <div>
+        <div className="menuPanel__selectWrapper">
           Wybierz swoją fiszkę:
           <select
+            className="menuPanel__select"
             value={activeType}
             defaultChecked
             onChange={this.handleChangeType}
@@ -69,16 +70,16 @@ class MenuDeleteType extends Component {
         </div>
         <SquareButton
           value="Usuń!"
-          className="menu__addButton"
+          className="menuPanel__submit"
           onClick={this.handleSubmit}
         />
         {errorType && (
-          <span className="menu__Operation__wrong">
+          <span className="menuPanel__wrongStatement">
             {ErrorStatements.TYPES[errorType]}
           </span>
         )}
         <MainButton
-          className="menu__closeButton"
+          className="menuPanel__closeButton"
           icon="icon-cancel-circled"
           onClick={closeWindow}
         />

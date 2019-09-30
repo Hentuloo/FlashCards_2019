@@ -13,8 +13,8 @@ const MainButton = props => {
       className={propClasses}
       onClick={onClick}
     >
-      <i className={icon} />
-      <span>{value}</span>
+      <i className={`${icon} mainButton__icon`} />
+      <span className="mainButton__span">{value}</span>
     </button>
   );
 };

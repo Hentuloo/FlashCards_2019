@@ -63,16 +63,22 @@ class MenuChangeType extends Component {
 
     return (
       <div className={propClasses}>
-        <div>
+        <div className="menuPanel__selectWrapper">
           Wybierz swoją fiszkę:
-          <select value={type} defaultChecked onChange={this.handleChangeType}>
+          <select
+            className="menuPanel__select"
+            value={type}
+            defaultChecked
+            onChange={this.handleChangeType}
+          >
             {typesOptions}
           </select>
         </div>
-        <label htmlFor="type__title">
+        <label htmlFor="type__title" className="menuPanel__label">
           Nazwa:{' '}
           <input
             id="type_title"
+            className="menuPanel__input"
             type="text"
             name="title"
             placeholder="np. sport"
@@ -82,21 +88,21 @@ class MenuChangeType extends Component {
           />
         </label>
 
-        <div className="menu__selectIcon">
+        <div className="menuPanel__iconsWrapper">
           <ChoseIcon active={iconActive} onClick={this.handleClickIcon} />
         </div>
         <SquareButton
+          className="menuPanel__submit"
           value="Zmodyfikuj!"
-          className="menu__addButton"
           onClick={this.handleSubmit}
         />
         {errorType && (
-          <span className="menu__Operation__wrong">
+          <span className="menuPanel__wrongStatement">
             {ErrorStatements.TYPES[errorType]}
           </span>
         )}
         <MainButton
-          className="menu__closeButton"
+          className="menuPanel__closeButton"
           icon="icon-cancel-circled"
           onClick={closeWindow}
         />
