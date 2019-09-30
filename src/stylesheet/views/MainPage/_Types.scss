@@ -1,16 +1,23 @@
-.MP__types {
-    min-height: 100vh;
-    flex-wrap: wrap;
-    padding-bottom: 90px;
-    align-content: flex-start;
+.main {
+    &__types {
+        min-height: 100vh;
+        flex-wrap: wrap;
+        padding-bottom: 90px;
+        align-content: flex-start;
 
-    div {
+        @media (min-width: $breakPoint-mobile) {
+            background-color: $green-first;
+            margin: 0px 10px;
+        }
+    }
+
+    &__singleType {
         flex-basis: 50%;
         text-align: center;
         margin: 20px 0px;
     }
 
-    div:nth-of-type(3n) {
+    &__singleType:nth-of-type(3n) {
         flex-basis: 100%;
     }
 
@@ -23,11 +30,5 @@
         background-color: $green-first;
         font-size: $font-l;
     }
-
-    @media (min-width: $breakPoint-mobile) {
-        background-color: $green-first;
-        margin: 0px 10px;
-    }
-
 
 }

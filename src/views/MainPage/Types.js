@@ -6,17 +6,20 @@ import { changeActive } from 'actions';
 import { MainButton } from 'components/atoms';
 
 const TypesTemplate = ({ types, action, active }) =>
-  types.map(type => (
-    <div key={type.id}>
-      <MainButton
-        className={`mainButton--withText 
-        ${active === type.id ? 'mainButton--active' : ''}`}
-        icon={`icon-${type.icon}`}
-        value={type.title}
-        onClick={() => action(type.id)}
-      />
-    </div>
-  ));
+  types.map(type => {
+    const { id, icon, title } = type;
+    return (
+      <div key={id} className="main__singleType">
+        <MainButton
+          className={`mainButton--withText mainButton--withBorder main__typeButton
+        ${active === id ? 'mainButton--active' : ''}`}
+          icon={`icon-${icon}`}
+          value={title}
+          onClick={() => action(id)}
+        />
+      </div>
+    );
+  });
 
 class Types extends Component {
   state = {};
@@ -38,7 +41,7 @@ class Types extends Component {
       );
     }
     return (
-      <h3 className="MP__types MP__types_header">
+      <h3 className="main__typesHeader">
         Dodaj pierwsze swoje fiszki korzystając z plusa
       </h3>
     );

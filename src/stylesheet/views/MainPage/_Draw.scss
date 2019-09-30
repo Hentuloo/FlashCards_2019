@@ -1,12 +1,20 @@
-.MP__draw {
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    font-size: $font-m;
-    text-align: center;
+.main {
+    &__draw {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        font-size: $font-m;
+        text-align: center;
+
+        @media (min-width: $breakPoint-mobile) {
+            flex-grow: 0;
+            width: 90%;
+            min-height: 200px;
+        }
+    }
 
 
-    .MP__draw_Window {
+    &__drawBox {
         display: flex;
         width: 80%;
         min-height: 100px;
@@ -18,33 +26,29 @@
         color: $white;
         margin: 10px auto;
         padding: 4px 20px;
+    }
 
-        .MP__draw_Window_span {
-            display: block;
+    &__drawText {
+        display: block;
 
-        }
-
-        .MP__draw_Window_span--animated {
+        &--animated {
             animation: wordOpacity 0.5s 0.4s ease-in-out both;
-        }
-
-        @media (min-width: $breakPoint-mobile) {
-            flex-grow: 0;
-            width: 90%;
-            min-height: 200px;
         }
     }
 
-    .mainButton {
+    &__drawButton {
         box-sizing: content-box;
         margin: 10px auto;
         border: 8px solid $green-first;
 
-        i::before {
+        .mainButton__icon::before {
             margin: 0px;
         }
     }
+
 }
+
+
 
 @keyframes wordOpacity {
     from {

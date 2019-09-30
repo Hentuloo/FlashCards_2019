@@ -6,15 +6,16 @@ import { addWords } from 'actions';
 import validator from 'config/validator';
 import Error from 'config/ErrorStatements';
 
-import { LearnTable } from 'components/molecules';
+import { Table } from 'components/molecules';
 import { MainButton, SquareButton } from 'components/atoms';
 
 const InputsCounter = (onChange, count) => {
   const inputs = [];
   for (let i = 0; i < count; i += 1) {
     inputs.push(
-      <div key={i}>
+      <React.Fragment key={i}>
         <input
+          className="newWords__input"
           onChange={onChange}
           number={i}
           name="word"
@@ -23,6 +24,7 @@ const InputsCounter = (onChange, count) => {
           autoComplete="off"
         />
         <input
+          className="newWords__input"
           onChange={onChange}
           number={i}
           name="description"
@@ -30,7 +32,7 @@ const InputsCounter = (onChange, count) => {
           placeholder="słowo"
           autoComplete="off"
         />
-      </div>,
+      </React.Fragment>,
     );
   }
   return inputs;
@@ -102,40 +104,42 @@ class Learn extends Component {
     const { counter, errorType } = this.state;
     return (
       <>
-        <div className="MP__learn_addWrapper">
-          <div className="MP__learn_addInputs">
+        <div className="newWords">
+          <div className="newWords__inputs">
             {InputsCounter(this.handleChange, counter)}
           </div>
-          <div className="MP__learn_addButtons">
+          <div className="newWords__buttonsWrapper">
             <MainButton
+              className="newWords__button"
               icon="icon-plus"
               value="dodaj typ fiszek"
               onClick={this.handleClickNewInput}
             />
             <MainButton
+              className="newWords__button"
               icon="icon-magic"
               value="Przywróć ustawienia początkowe"
               onClick={this.handleClickClearState}
             />
           </div>
           <SquareButton
+            className="newWords__submit"
             type="submit"
             onClick={this.handleSubmitNewWords}
             value={counter > 1 ? 'Dodaj nowe słówka' : 'Dodaj nowe słówko'}
           />
         </div>
         {errorType && (
-          <div className="MP__learn_error">{Error.TYPES[errorType]}</div>
+          <div className="main__learnError">{Error.TYPES[errorType]}</div>
         )}
-        <div className="MP__learn_table">
-          {singleType && (
-            <LearnTable
-              idType={singleType.id}
-              setError={this.handleSetErrorFromTable}
-              data={singleType.cards}
-            />
-          )}
-        </div>
+        {singleType && (
+          <Table
+            className="main__learnTable"
+            idType={singleType.id}
+            setError={this.handleSetErrorFromTable}
+            data={singleType.cards}
+          />
+        )}
       </>
     );
   }

@@ -62,18 +62,19 @@ class Draw extends Component {
 
     return (
       <>
-        <div className="MP__draw_Window">
-          <span className="MP__draw_Window_span">{drawStatement()}</span>
+        <div className="main__drawBox">
+          <span className="main__drawText">{drawStatement()}</span>
         </div>
-        <div className="MP__draw_Window">
+        <div className="main__drawBox">
           <span
-            className="MP__draw_Window_span MP__draw_Window_span--animated"
+            className="main__drawText main__drawText--animated"
             key={animationResetKey}
           >
             {ShowSecondCard && description}
           </span>
         </div>
         <MainButton
+          className="main__drawButton"
           icon="icon-arrows-ccw"
           value="Wylosuj fiszke"
           onClick={this.handleClick}

@@ -26,17 +26,23 @@
     }
 
     &--active {
-        background-color: black;
+        background-color: $black;
     }
 
     &--withText {
-        &__span {
+        .mainButton__span {
             display: block;
         }
     }
 
+    &--withBorder {
+        width: 70px;
+        height: 70px;
+        border: 6px solid $green-third;
+    }
+
     &--bgc {
         background-color: $gray-first;
-        color: black
+        color: $black
     }
 }

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { fetchTypes } from 'actions';
 
 import MainLayout from 'layouts/MainLayout';
-import { ViewsMenuMobile, Helmet } from 'components/organisms';
+import { NavForMobile, Helmet } from 'components/organisms';
 
 import Types from './Types';
 import Draw from './Draw';
@@ -42,28 +42,28 @@ class MainPage extends Component {
         />
         <MainLayout>
           <>
-            <main className="MP__wrapper">
-              <div
-                className={`MP__section  MP__draw 
-              ${activeSection === 'draw' ? 'MP__section--active' : ''}`}
+            <main className="main__wrapper">
+              <section
+                className={`main__section  main__draw 
+              ${activeSection === 'draw' ? 'main__section--active' : ''}`}
               >
                 <Draw />
-              </div>
-              <div
-                className={`MP__section  MP__types 
-              ${activeSection === 'types' ? 'MP__section--active' : ''}`}
+              </section>
+              <section
+                className={`main__section  main__types 
+              ${activeSection === 'types' ? 'main__section--active' : ''}`}
               >
                 <Types />
-              </div>
-              <div
-                className={`MP__section  MP__learn 
-              ${activeSection === 'learn' ? 'MP__section--active' : ''}`}
+              </section>
+              <section
+                className={`main__section  main__learn 
+              ${activeSection === 'learn' ? 'main__section--active' : ''}`}
               >
                 <Learn />
-              </div>
+              </section>
             </main>
-            <nav className="MP__sectionNav_Mobile">
-              <ViewsMenuMobile
+            <nav className="main__navForMobile">
+              <NavForMobile
                 activeSection={activeSection}
                 action={this.handleChangeSection}
               />

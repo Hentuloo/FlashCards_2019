@@ -18,20 +18,22 @@ class MenuPagesList extends Component {
     const { className } = this.props;
     return (
       <nav className={className}>
-        <li className="menuPages__listElement">
-          <Link className="menuPages__link" to={Constants.PATHS.settings}>
-            Ustawienia
-          </Link>
-        </li>
-        <li className="menuPages__listElement">
-          <a
-            className="menuPages__link"
-            href="#logout"
-            onClick={this.handleLogOut}
-          >
-            Wyloguj
-          </a>
-        </li>
+        <ul className="menuPages__list">
+          <li className="menuPages__listElement">
+            <Link className="menuPages__link" to={Constants.PATHS.settings}>
+              Ustawienia
+            </Link>
+          </li>
+          <li className="menuPages__listElement">
+            <a
+              className="menuPages__link"
+              href="#logout"
+              onClick={this.handleLogOut}
+            >
+              Wyloguj
+            </a>
+          </li>
+        </ul>
       </nav>
     );
   }

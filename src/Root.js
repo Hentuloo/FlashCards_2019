@@ -16,7 +16,7 @@ import 'stylesheet/index.scss';
 function Root() {
   return (
     <Router history={history}>
-      <div className="Root">
+      <>
         <Route
           path={Constants.PATHS.root}
           exact
@@ -37,7 +37,7 @@ function Root() {
           pathname={Constants.PATHS.settings}
           component={withAuth(SettingsPage)}
         />
-      </div>
+      </>
     </Router>
   );
 }

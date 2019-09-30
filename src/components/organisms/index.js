@@ -1,5 +1,5 @@
 import Menu from './Menu/Menu';
-import ViewsMenuMobile from './ViewsMenuMobile/ViewsMenuMobile';
+import NavForMobile from './NavForMobile/NavForMobile';
 import Helmet from './Helmet/Helmet';
 
-export { Menu, ViewsMenuMobile, Helmet };
+export { Menu, NavForMobile, Helmet };

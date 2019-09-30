@@ -1,0 +1,69 @@
+.table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: $green-third;
+    font-size: $font-m;
+    color: $white;
+    text-align: center;
+    padding: 4px 4px 80px 4px;
+
+    &__head {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    &__bodyItem {
+        display: flex;
+    }
+
+    &__bodyCall {
+        flex-grow: 1;
+        flex-basis: 20%;
+        border: 1px solid $white;
+        padding: 8px 2px;
+        line-height: $font-s;
+        word-break: break-word;
+
+        &--hidden {
+            opacity: 0;
+        }
+
+        &--options {
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: 37px;
+        }
+    }
+
+    &__OptionButton {
+        font-size: $font-m;
+        width: 28px;
+        height: 28px;
+        color: $black;
+        margin-left: 4px;
+        align-self: center;
+
+        .mainButton__icon::before {
+            margin: 0px;
+        }
+    }
+
+    &__footRow {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+    }
+
+    &__footCall {
+        flex-basis: 100%;
+    }
+
+    &__EyeButton {
+        justify-items: center;
+        margin: 10px 40px 0px 10px;
+    }
+}

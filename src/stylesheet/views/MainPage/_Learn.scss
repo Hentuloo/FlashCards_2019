@@ -1,14 +1,20 @@
-.MP__learn {
+.main {
+    &__learn {
+        width: 90%;
+        flex-direction: column;
+        margin: 0px auto;
+        padding: 0px 30px;
+        padding-top: 125px;
 
-    flex-direction: column;
-    margin: 0px auto;
-    padding: 0px 30px;
+        @media (min-width: $breakPoint-mobile) {
+            width: 90%;
+            margin: 30px 10px;
 
-    @media (min-width: $breakPoint-mobile) {
-        padding: 0px 10px;
+        }
     }
 
-    .MP__learn_error {
+
+    &__learnError {
         width: 100%;
         padding: 5px;
         margin: 10px 0px;
@@ -18,70 +24,14 @@
         font-size: $font-m;
     }
 
-    .MP__learn_addWrapper {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-content: center;
-        margin: 30px 0px;
-
-        .MP__learn_addButtons {
-            margin: 0px auto;
-        }
-
-        .MP__learn_addInputs {
-            margin: 0px auto;
-
-            div {
-                display: flex;
-                flex-basis: 50%;
-                color: white;
-                justify-content: center;
-            }
-
-            input {
-                max-width: 40%;
-                height: 30px;
-                border: none;
-                border: 1px solid $gray-first;
-                background-color: $green-third;
 
 
-                @media (min-width: $breakPoint-mobile) {
-                    max-width: 150px;
-                }
-            }
-        }
-
-        .mainButton {
-            width: 35px;
-            height: 35px;
-            font-size: $font-m;
-            border: 2px solid $green-first;
-            margin: 0px auto;
-        }
-
-        .SquareButton {
-            flex-grow: 1;
-            padding: 4px;
-            margin: 4px auto;
-            background-color: $green-third;
-            border: 2px solid $green-first;
-            color: white;
-        }
-
-        .MP__learn_table {
-            flex-grow: 1;
-        }
+    &__learnTable {
+        flex-grow: 1;
 
         @media (min-width: $breakPoint-mobile) {
-            width: 90%;
-            margin: 30px 10px;
-
-            .MP__learn_table {
-                flex-grow: 0;
-            }
+            flex-grow: 0;
         }
     }
+
 }

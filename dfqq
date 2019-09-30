@@ -1,0 +1,239 @@
+[33mcommit 65d2611dd996bb0cbcd694ec83c4bc2d257cf39b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Kamil <Kamil@>
+Date:   Mon Sep 30 11:21:41 2019 +0200
+
+    improve BEM classes in AuthPage and menu components
+
+[33mcommit 11af578dd062b4ff1637583e441a6beae6016349[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Kamil <Kamil@>
+Date:   Wed Jul 24 11:20:27 2019 +0200
+
+    set Helment for every single view
+
+[33mcommit 453f740f9346b84c2bd0b9930b112615cd5bc758[m
+Author: Kamil <Kamil@>
+Date:   Tue Jul 23 12:29:23 2019 +0200
+
+    create README.md
+
+[33mcommit be94419b208b4caf51563442c62b4a7bb0dc07dc[m
+Author: Kamil <Kamil@>
+Date:   Tue Jul 23 10:05:58 2019 +0200
+
+    settingsPage
+
+[33mcommit c1843059666ccf6c8240b160e6c7c1ad7ae2a67b[m
+Author: Kamil <Kamil@>
+Date:   Tue Jul 23 08:43:55 2019 +0200
+
+    clear state button in learn section
+
+[33mcommit 8ddfaf6e9f395265ed60ce766b887a16bc4820b6[m
+Author: Kamil <Kamil@>
+Date:   Mon Jul 22 17:18:39 2019 +0200
+
+    update failure response when editType action
+
+[33mcommit 724ff148a3fc71dd231e32f51e579176ad1e2e4c[m
+Author: Kamil <Kamil@>
+Date:   Mon Jul 22 17:09:55 2019 +0200
+
+    update validator (title)
+
+[33mcommit 691d328ec0acc9fc5c58dba71cef92a6647d356f[m
+Author: Kamil <Kamil@>
+Date:   Mon Jul 22 16:53:39 2019 +0200
+
+    update validator (icon)
+
+[33mcommit 7aba0163ce40506cde9004a73419accd6c35c1f3[m
+Author: Kamil <Kamil@>
+Date:   Mon Jul 22 16:52:39 2019 +0200
+
+    update validator (icon)
+
+[33mcommit 8ae92aa275bf7f76f3cff9b650f20c9e34f51c0a[m
+Author: Kamil <Kamil@>
+Date:   Mon Jul 22 13:15:42 2019 +0200
+
+    learn table debug button styles
+
+[33mcommit 40a71fa24a92fd74b076638840186dcfb9654fa7[m
+Author: Kamil <Kamil@>
+Date:   Mon Jul 22 13:13:28 2019 +0200
+
+    debug auth pages
+
+[33mcommit 47a552c88131716f3ff61fee7f09fb083d484f3b[m
+Author: Kamil <Kamil@>
+Date:   Mon Jul 22 09:50:11 2019 +0200
+
+    update package.json build to create _redirects file
+
+[33mcommit 29dab22f7329a0733f387ff2a5f61e8a637f9386[m
+Author: Kamil <Kamil@>
+Date:   Mon Jul 22 09:41:11 2019 +0200
+
+    update request dispatch
+
+[33mcommit c7cffbabff954d7a6737f70ad1336b0c205d8b3a[m
+Author: Kamil <Kamil@>
+Date:   Mon Jul 22 09:38:06 2019 +0200
+
+    Routing React Apps hosted on Netlify
+
+[33mcommit a838575c4786c65e1c0e9d44f1e3cfee5a32ae21[m
+Author: Kamil <Kamil@>
+Date:   Mon Jul 22 09:20:44 2019 +0200
+
+    add htaccess
+
+[33mcommit 7d59b11ccf934c8e19bb6bbbcecb128b89a7d777[m
+Author: Kamil <Kamil@>
+Date:   Mon Jul 22 09:05:32 2019 +0200
+
+    add Helmet
+
+[33mcommit ed1351957dc7a5ba570b0b86fe052b2afa72210e[m
+Author: Kamil <Kamil@>
+Date:   Sun Jul 21 15:08:29 2019 +0200
+
+    add buttons to hide part of table + fix draw section to to draw random language
+
+[33mcommit d7d24cb19d55a2dd47d1bbee807a9ee14b2d144d[m
+Author: Kamil <Kamil@>
+Date:   Sun Jul 21 11:38:50 2019 +0200
+
+    update validator
+
+[33mcommit 8dfb4f782a1d71abd82f4208b74a517f58e3ace8[m
+Author: Kamil <Kamil@>
+Date:   Sat Jul 20 14:30:00 2019 +0200
+
+    debugg main page sections + addWords action + delete word action
+
+[33mcommit 580b046cc413ff54f36abcb01638ff08b71c74f0[m
+Author: Kamil <Kamil@>
+Date:   Sat Jul 20 10:34:26 2019 +0200
+
+    reducers refactoring and add chose type action
+
+[33mcommit 0e6d06b68fef487cab2d03e5d1fbd3426d379ea0[m
+Author: Kamil <Kamil@>
+Date:   Fri Jul 19 19:11:58 2019 +0200
+
+    delete and edit types actions + exit button in menuOperation
+
+[33mcommit b5f7da402e04a14451354151c7b7f8d7019c9d6a[m
+Author: Kamil <Kamil@>
+Date:   Thu Jul 18 08:02:32 2019 +0200
+
+    refactoring and remove initial state from flashCards-reducer
+
+[33mcommit 673ad6805cbccf423a94c804e07ab30d82f21598[m
+Author: Kamil <Kamil@>
+Date:   Wed Jul 17 19:03:05 2019 +0200
+
+    refactoring + loadingBar + complete auth page with authentication
+
+[33mcommit 19c706e4148094e17bbe359f25f9cfa0cfea989e[m
+Author: Kamil <Kamil@>
+Date:   Tue Jul 16 16:56:46 2019 +0200
+
+    authPage + authorization + login + protectRouter(hoc)
+
+[33mcommit 2e6d48f7deca0716940213d01cac30b411a64dc7[m
+Author: Kamil <Kamil@>
+Date:   Tue Jul 2 10:13:58 2019 +0200
+
+    Draw section connect with redux and randomCard
+
+[33mcommit 74d7b09e65cfda905a9c0629bfe86ab8cfc7b37d[m
+Author: Kamil <Kamil@>
+Date:   Tue Jul 2 08:28:43 2019 +0200
+
+    connect learn table with redux
+
+[33mcommit 3f91ebc5b691a350ba99f0e415fc26208b4681c2[m
+Author: Kamil <Kamil@>
+Date:   Wed Jun 26 14:01:25 2019 +0200
+
+    add Settings reducer
+
+[33mcommit 07b68ba620e04295ad0ec41538d09447f267a659[m
+Author: Kamil <Kamil@>
+Date:   Wed Jun 26 12:58:16 2019 +0200
+
+    add redux and connect typesView
+
+[33mcommit a62f7458aec8be4dad5fa470c54f09e731abedbd[m
+Author: Kamil <Kamil@>
+Date:   Wed Jun 26 07:38:06 2019 +0200
+
+    menu operation panel for dekstop
+
+[33mcommit 46622cf5d1b865ebb40434157e2b5416ce2180cc[m
+Author: Kamil <Kamil@>
+Date:   Tue Jun 25 12:52:32 2019 +0200
+
+    refactoring!
+
+[33mcommit cd284e45d6caac8a695281a1d4340cbc8278d320[m
+Author: Kamil <Kamil@>
+Date:   Tue Jun 25 09:25:50 2019 +0200
+
+    mainPage for desktop
+
+[33mcommit 5f237df367c418528e5eba0e35cc613a24e830f0[m
+Author: Kamil <Kamil@>
+Date:   Mon Jun 24 14:02:52 2019 +0200
+
+    MenuTypeOperations
+
+[33mcommit 5f679a4d0e4759da8d78ad954f3d9c7a42b068b1[m
+Author: Kamil <Kamil@>
+Date:   Sun Jun 23 12:13:18 2019 +0200
+
+    add waves to menu
+
+[33mcommit 9915ea6939c5a7a44fcd7388869a1bc14325ab5a[m
+Author: Kamil <Kamil@>
+Date:   Sun Jun 23 11:34:29 2019 +0200
+
+    MainPage sections (learn, draw, types)
+
+[33mcommit b93eec8b7483d3004b5d763fb6e825210f0f5b64[m
+Author: Kamil <Kamil@>
+Date:   Sat Jun 22 13:26:36 2019 +0200
+
+    MainPage bottom menu
+
+[33mcommit 29703850af01e4df7a2c85a1d1bb4536f02ed3e4[m
+Author: Kamil <Kamil@>
+Date:   Sat Jun 22 10:41:15 2019 +0200
+
+    add fontello and finish basic version of menu for mobile
+
+[33mcommit 82c3fc85e09893cccc047893ef45dfa8fb75845d[m
+Author: Kamil <Kamil@>
+Date:   Sat Jun 22 08:06:02 2019 +0200
+
+    menu Hamburger and button
+
+[33mcommit 43aa2c3ea5b09bd2bf0ab929655e065d275e97f9[m
+Author: Kamil <Kamil@>
+Date:   Wed Jun 19 15:24:06 2019 +0200
+
+    files and stylesheet hierarchy (sass and atomic design)
+
+[33mcommit 5253478d756378ab102c754ee3d81dd75d2c6503[m
+Author: Kamil <Kamil@>
+Date:   Tue Jun 18 07:53:47 2019 +0200
+
+    configure app (eslint, prettier, husky, lint-staged)
+
+[33mcommit 9b69b23487e89158a34e8def04021923b042327c[m
+Author: Kamil <Kamil@>
+Date:   Tue Jun 18 07:32:05 2019 +0200
+
+    Initial commit from Create React App

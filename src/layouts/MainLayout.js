@@ -9,7 +9,7 @@ const MainLayout = ({ children, loading }) => {
     <>
       {loading && <LoadingBar />}
       <Menu />
-      <div className="AuthPage__Layout">{children}</div>
+      {children}
     </>
   );
 };

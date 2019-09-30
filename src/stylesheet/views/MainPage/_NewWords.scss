@@ -1,0 +1,58 @@
+.newWords {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    margin: 30px auto;
+
+    &__buttonsWrapper {
+        margin: 0px auto;
+    }
+
+    &__inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: flex-end;
+
+        .newWords__input:nth-of-type(2n) {
+            justify-self: start;
+        }
+
+
+    }
+
+    &__input {
+        width: 100%;
+        max-width: 200px;
+        height: 30px;
+        border: none;
+        border: 1px solid $gray-first;
+        background-color: $green-third;
+        color: $white;
+
+
+
+
+        @media (min-width: $breakPoint-mobile) {
+            max-width: 150px;
+        }
+    }
+
+    &__submit {
+        flex-grow: 1;
+        padding: 4px;
+        margin: 4px auto;
+        background-color: $green-third;
+        border: 2px solid $green-first;
+        color: white;
+    }
+
+    &__button {
+        width: 35px;
+        height: 35px;
+        font-size: $font-m;
+        border: 2px solid $green-first;
+        margin: 0px auto;
+    }
+}

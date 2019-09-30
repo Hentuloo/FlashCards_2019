@@ -11,10 +11,9 @@
     background-color: $green-first;
 
     @media (min-width: $breakPoint-mobile) {
-        position: fixed;
         display: flex;
+        position: fixed;
         width: auto;
-        height: 76px;
         top: 0%;
         right: 0%;
     }
@@ -24,6 +23,19 @@
 
         @media (min-width: $breakPoint-mobile) {
             display: flex;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0px;
+        padding-top: 20px;
+        margin: 0px;
+
+        @media (min-width: $breakPoint-mobile) {
+            display: flex;
+            padding: 0px;
+            height: 76px;
         }
     }
 

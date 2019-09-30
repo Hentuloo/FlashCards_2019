@@ -2,7 +2,7 @@ import axios from 'axios';
 import history from 'config/history';
 import Constants from 'config/Constants';
 
-axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.baseURL = 'https://megafiszkachentulooo.herokuapp.com';
 axios.defaults.headers.common = {
   Authorization: `bearer ${localStorage.getItem('flashCardsToken')}`,
 };

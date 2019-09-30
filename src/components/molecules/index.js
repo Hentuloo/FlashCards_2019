@@ -1,7 +1,7 @@
 import ChoseIcon from './ChoseIcon/ChoseIcon';
-import LearnTable from './LearnTable/LearnTable';
+import Table from './Table/Table';
 import MenuAddType from './MenuOperations/MenuAddType';
 import MenuChangeType from './MenuOperations/MenuChangeType';
 import MenuDeleteType from './MenuOperations/MenuDeleteType';
 
-export { ChoseIcon, LearnTable, MenuAddType, MenuChangeType, MenuDeleteType };
+export { ChoseIcon, Table, MenuAddType, MenuChangeType, MenuDeleteType };
