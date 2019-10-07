@@ -72,7 +72,7 @@ class AuthBox extends Component {
                 <input
                   type="email"
                   name="email"
-                  className="AuthBox__input"
+                  className="BasicForm__input"
                   placeholder="Potwierdź email"
                   value={email}
                   onChange={this.handleInputValue}
@@ -80,19 +80,19 @@ class AuthBox extends Component {
               )}
               <button
                 type="submit"
-                className="AuthBox__submit"
+                className="BasicForm__submit"
                 onClick={this.handleClickDelete}
               >
                 Chcę usunąć konto
               </button>
               <button
                 type="submit"
-                className="AuthBox__submit"
+                className="BasicForm__submit"
                 onClick={this.handleClickBuy}
               >
                 Chcę kupić premium
               </button>
-              <Link to={Constants.PATHS.root} className="AuthBox__link">
+              <Link to={Constants.PATHS.root} className="BasicForm__link">
                 POWRÓT
               </Link>
             </div>

@@ -19,13 +19,13 @@ $randomWidthS: random(60) * 1%;
         min-width: 10%;
         left: 0%;
         top: 0%;
-        background-color: $green-first;
+        background-color: nth($blue, 1);
         animation: LoadingMovment 2.9s ease-in-out infinite both;
     }
 
     &::before {
         width: $randomWidthS;
-        background-color: $green-fourth;
+        background-color: nth($red, 1);
         animation: LoadingMovment 2s ease-out infinite both;
     }
 }

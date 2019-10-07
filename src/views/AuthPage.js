@@ -79,14 +79,14 @@ class AuthPage extends Component {
               </h1>
               <form
                 method="post"
-                className="AuthBox__form"
+                className="AuthBox__form BasicForm"
                 onSubmit={this.handleSubmit}
               >
                 <div className="BasicForm__inputWrapper">
                   <input
                     type="email"
                     name="email"
-                    className="AuthBox__input"
+                    className="BasicForm__input"
                     placeholder="e-mail"
                     value={email}
                     onChange={this.handleInputValue}
@@ -94,23 +94,23 @@ class AuthPage extends Component {
                   <input
                     type="password"
                     name="password"
-                    className="AuthBox__input"
+                    className="BasicForm__input"
                     placeholder="password"
                     value={password}
                     onChange={this.handleInputValue}
                   />
                 </div>
-                <button type="submit" className="AuthBox__submit">
+                <button type="submit" className="BasicForm__submit">
                   {pageType === login && 'Do fiszek!'}
                   {pageType === signup && 'Nowe konto!'}
                 </button>
                 {pageType === signup && (
-                  <Link to={Constants.PATHS.login} className="AuthBox__link">
+                  <Link to={Constants.PATHS.login} className="BasicForm__link">
                     Chcę się zalogować
                   </Link>
                 )}
                 {pageType === login && (
-                  <Link to={Constants.PATHS.signup} className="AuthBox__link">
+                  <Link to={Constants.PATHS.signup} className="BasicForm__link">
                     Chcę utworzyć konto
                   </Link>
                 )}

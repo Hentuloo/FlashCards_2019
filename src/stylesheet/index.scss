@@ -1,29 +1,38 @@
-  *,
-  *::before,
-  *::after {
-      box-sizing: border-box;
-      outline: none;
-  }
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
 
-  html {
-      font-size: 62.5%;
-  }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    outline: none;
+}
 
-  body {
-      margin: 0px;
-      font-size: 1.6rem;
-  }
+html {
+    font-size: 62.5%;
+}
 
-  // VARIABLES
-  @import './_variables.scss';
+body {
+    margin: 0px;
+    font-size: 1.6rem;
+    font-family: 'PT Sans', sans-serif;
+}
 
-  // COMPONENTS
-  @import './components/index.scss';
+@media (min-width: 768px) {
+    html {
+        font-size: 80.5%;
+    }
+}
+
+// VARIABLES
+@import './_variables.scss';
+
+// COMPONENTS
+@import './components/index.scss';
 
 
-  // VIEWS
-  @import './views/_AuthBox.scss';
-  @import './views/MainPage/index.scss';
+// VIEWS
+@import './views/_AuthBox.scss';
+@import './views/MainPage/index.scss';
 
-  // FONTELLO
-  @import "../asset/fontello/css/fontello.css";
+// FONTELLO
+@import "../asset/fontello/css/fontello.css";

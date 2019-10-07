@@ -6,24 +6,24 @@ const ViewsMenuMobile = ({ activeSection, action }) => {
     <>
       <SquareButton
         as="a"
-        className={`main__navForMobileElement ${activeSection === 'types' &&
-          'SquareButton--active'}`}
+        className={`SquareButton--red main__navForMobileElement ${activeSection ===
+          'types' && 'SquareButton--active'}`}
         value="Gatunki"
         onClick={() => {
           action('types');
         }}
       />
       <SquareButton
-        className={`main__navForMobileElement ${activeSection === 'draw' &&
-          'SquareButton--active'}`}
+        className={`SquareButton--pink main__navForMobileElement ${activeSection ===
+          'draw' && 'SquareButton--active'}`}
         value="Zgadywanie"
         onClick={() => {
           action('draw');
         }}
       />
       <SquareButton
-        className={`main__navForMobileElement ${activeSection === 'learn' &&
-          'SquareButton--active'}`}
+        className={`SquareButton--blue main__navForMobileElement ${activeSection ===
+          'learn' && 'SquareButton--active'}`}
         value="Nauka"
         onClick={() => {
           action('learn');

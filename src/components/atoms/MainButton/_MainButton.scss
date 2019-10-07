@@ -5,8 +5,9 @@
     padding: 0px;
     font-size: $font-xl;
     line-height: 30px;
-    color: $green-third;
-    background-color: $white;
+    color: $white;
+    background-color: nth($blue, 2);
+    box-shadow: 0px 0px 12px 0px $black;
     border: none;
     text-align: center;
     cursor: pointer;
@@ -15,18 +16,24 @@
     &__span {
         display: none;
         position: absolute;
-        width: 150%;
-        bottom: -35px;
+        width: 200%;
+        bottom: -40px;
         left: 50%;
         transform: translateX(-50%);
         font-size: $font-s;
         line-height: $font-s;
         font-weight: $font-bold;
         color: $black;
+
+        @media (min-width: $breakPoint-mobile) {
+            font-size: $font-xs;
+            line-height: $font-xs;
+            bottom: -35px;
+        }
     }
 
     &--active {
-        background-color: $black;
+        background-color: nth($red, 3);
     }
 
     &--withText {
@@ -38,11 +45,23 @@
     &--withBorder {
         width: 70px;
         height: 70px;
-        border: 6px solid $green-third;
+        border: 4px solid $black;
     }
 
     &--bgc {
         background-color: $gray-first;
         color: $black
+    }
+
+    &--blue {
+        background-color: nth($blue, 1);
+    }
+
+    &--red {
+        background-color: nth($red, 1);
+    }
+
+    &--pink {
+        background-color: nth($pink, 1);
     }
 }

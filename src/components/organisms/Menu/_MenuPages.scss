@@ -3,12 +3,12 @@
     position: absolute;
     flex-grow: 1;
     width: 100%;
-    top: 100px;
+    top: 79px;
     line-height: 65px;
     text-align: center;
     list-style: none;
     font-size: $font-l;
-    background-color: $green-first;
+    background-color: nth($gray, 1);
 
     @media (min-width: $breakPoint-mobile) {
         display: flex;
@@ -16,6 +16,7 @@
         width: auto;
         top: 0%;
         right: 0%;
+        background-color: transparent;
     }
 
     &--mobileActive {
@@ -26,16 +27,39 @@
         }
     }
 
+
     &__list {
         list-style: none;
         padding: 0px;
-        padding-top: 20px;
         margin: 0px;
 
         @media (min-width: $breakPoint-mobile) {
+            position: relative;
             display: flex;
             padding: 0px;
             height: 76px;
+
+
+        }
+    }
+
+    &__listElement {
+        position: relative;
+
+        &:after {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            bottom: 7%;
+            left: 20%;
+            background-color: $white;
+
+
+            @media (min-width: $breakPoint-mobile) {
+                display: none;
+            }
         }
     }
 

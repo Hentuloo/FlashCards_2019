@@ -1,7 +1,8 @@
 .icons {
     cursor: pointer;
-    width: 34px;
-    height: 34px;
+    width: 45px;
+    height: 45px;
+    padding: 2px;
     overflow: hidden;
     border-radius: 50%;
     position: relative;
@@ -23,6 +24,6 @@
     }
 
     &--active {
-        background-color: $green-third;
+        background-color: nth($pink, 3);
     }
 }

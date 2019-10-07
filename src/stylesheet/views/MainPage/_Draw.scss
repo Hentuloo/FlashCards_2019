@@ -1,5 +1,6 @@
 .main {
     &__draw {
+        height: calc(100vh - 100px);
         flex-direction: column;
         flex-wrap: wrap;
         align-content: center;
@@ -7,9 +8,12 @@
         text-align: center;
 
         @media (min-width: $breakPoint-mobile) {
+            height: auto;
             flex-grow: 0;
             width: 90%;
             min-height: 200px;
+            font-size: $font-s;
+            line-height: $font-s;
         }
     }
 
@@ -21,11 +25,12 @@
         flex-direction: column;
         justify-content: center;
         align-content: center;
-
-        background-color: $green-fourth;
-        color: $white;
         margin: 10px auto;
         padding: 4px 20px;
+        color: $black;
+        font-weight: $font-bold;
+        border: 4px solid nth($red, 1);
+        box-shadow: 0px 0px 10px 2px nth($red, 1);
     }
 
     &__drawText {
@@ -38,8 +43,13 @@
 
     &__drawButton {
         box-sizing: content-box;
-        margin: 10px auto;
-        border: 8px solid $green-first;
+        margin: auto auto 0px;
+        padding: 5px;
+        background-color: nth($pink, 3);
+
+        @media (min-width: $breakPoint-mobile) {
+            margin: 30px auto 0px;
+        }
 
         .mainButton__icon::before {
             margin: 0px;

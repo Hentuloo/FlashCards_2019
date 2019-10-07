@@ -1,9 +1,9 @@
 .main {
     &__learn {
-        width: 90%;
+        width: 100%;
         flex-direction: column;
         margin: 0px auto;
-        padding: 0px 30px;
+        padding: 0px 20px;
         padding-top: 125px;
 
         @media (min-width: $breakPoint-mobile) {
@@ -19,7 +19,7 @@
         padding: 5px;
         margin: 10px 0px;
         text-align: center;
-        background-color: $red-second;
+        background-color: nth($red, 2);
         color: white;
         font-size: $font-m;
     }
