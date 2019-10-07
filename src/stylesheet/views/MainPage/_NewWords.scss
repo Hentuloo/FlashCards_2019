@@ -27,9 +27,24 @@
         max-width: 200px;
         height: 30px;
         border: none;
-        border: 1px solid $gray-first;
-        background-color: $green-third;
+        padding: 6px 4px 6px 10px;
+        box-shadow: 0px 0px 3px 2px $black;
+        border-radius: 30px;
+        margin: 8px 4px;
+
         color: $white;
+
+        &:nth-of-type(n) {
+            background-color: nth($blue, 2);
+        }
+
+        &:nth-of-type(2n) {
+            background-color: nth($blue, 3);
+        }
+
+        &::placeholder {
+            color: nth($gray, 3);
+        }
 
 
 
@@ -41,18 +56,24 @@
 
     &__submit {
         flex-grow: 1;
-        padding: 4px;
+        padding: 10px 4px;
         margin: 4px auto;
-        background-color: $green-third;
-        border: 2px solid $green-first;
+        background-color: nth($red, 2);
+        border: 2px solid nth($gray, 1);
         color: white;
     }
 
     &__button {
         width: 35px;
         height: 35px;
+        padding: 4px;
         font-size: $font-m;
-        border: 2px solid $green-first;
-        margin: 0px auto;
+        background-color: nth($red, 3);
+        margin: 20px 10px;
+
+        @media (min-width: $breakPoint-mobile) {
+            width: 45px;
+            height: 45px;
+        }
     }
 }

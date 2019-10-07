@@ -89,19 +89,19 @@ class Menu extends Component {
         />
         <div className="menuButtons">
           <MainButton
-            className="menuButtons__element"
+            className="menuButtons__element mainButton--blue"
             icon="icon-plus"
             value="dodaj typ fiszek"
             onClick={this.handleClickButtonAdd}
           />
           <MainButton
-            className="menuButtons__element"
+            className="menuButtons__element mainButton--pink"
             icon="icon-minus"
             value="usuń typ fiszek"
             onClick={this.handleClickButtonDelete}
           />
           <MainButton
-            className="menuButtons__element"
+            className="menuButtons__element mainButton--red"
             icon="icon-cog"
             value="zmodyfikuj typ fiszek"
             onClick={this.handleClickButtonChange}

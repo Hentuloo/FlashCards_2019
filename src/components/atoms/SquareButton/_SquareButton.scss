@@ -1,13 +1,40 @@
 .SquareButton {
     width: 100%;
-    font-size: $font-s;
-    text-transform: uppercase;
-    color: $white;
-    background-color: $green-first;
+
     border: 1px $white solid;
+    color: $white;
+    text-transform: uppercase;
+    background-color: $green-first;
+    font-size: $font-s;
+    font-weight: 600;
     cursor: pointer;
 
     &--active {
-        background-color: $green-fourth;
+        border: 2px $black solid;
+
+        &.SquareButton--blue {
+            background-color: nth($blue, 3);
+
+        }
+
+        &.SquareButton--red {
+            background-color: nth($red, 3);
+        }
+
+        &.SquareButton--pink {
+            background-color: nth($pink, 3);
+        }
+    }
+
+    &--blue {
+        background-color: nth($blue, 1);
+    }
+
+    &--red {
+        background-color: nth($red, 1);
+    }
+
+    &--pink {
+        background-color: nth($pink, 1);
     }
 }

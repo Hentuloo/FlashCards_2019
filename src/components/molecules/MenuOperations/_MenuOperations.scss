@@ -11,10 +11,10 @@
          font-size: $font-m;
          text-align: center;
          border: 5px solid white;
-         box-shadow: 0px 0px 0px 12px $green-third;
+         box-shadow: 0px 0px 0px 12px nth($gray, 2);
+         background-color: nth($gray, 1);
 
          @media (min-width: $breakPoint-mobile) {
-             background-color: $green-first;
              justify-content: center;
              padding: 10px;
              z-index: 11;
@@ -23,28 +23,35 @@
 
      &__iconsWrapper {
          width: 100%;
-         height: 90px;
+         height: 115px;
          margin: 10px auto;
          display: flex;
          flex-wrap: wrap;
          justify-content: space-around;
          overflow-y: scroll;
          font-size: $font-m;
-         border: 1px solid $white;
      }
 
      &__submit {
          padding: 7px;
-         background-color: $green-third;
+         padding: 10px 0px;
+         background-color: nth($blue, 2);
      }
 
      &__closeButton {
+         height: 50px;
+         width: 50px;
          position: absolute;
          top: 0%;
          right: 0%;
          transform: translate(50%, -50%);
-         background-color: $green-third;
+         background-color: nth($red, 3);
          color: $white;
+
+         @media (min-width: $breakPoint-mobile) {
+             height: 60px;
+             width: 60px;
+         }
      }
 
      &__submit {
@@ -53,7 +60,36 @@
 
      &__wrongStatement {
          padding: 7px;
-         background-color: $white;
-         color: $green-third;
+         background-color: nth($gray, 2);
+         color: $white;
+     }
+
+     &__input {
+         width: 60%;
+         padding: 6px 8px 6px 15px;
+         margin: 15px auto 2px;
+         border: 0px;
+         border-radius: 30px;
+         font-size: $font-s;
+         background-color: nth($blue, 1);
+         color: $white;
+         box-shadow: 0px 0px 9px 0px $black;
+
+         @media (min-width: $breakPoint-mobile) {
+             width: 40%;
+         }
+
+         &::placeholder {
+             color: nth($gray, 3);
+         }
+     }
+
+     &__select {
+         padding: 6px 8px 6px 15px;
+         margin-left: 10px;
+         background-color: nth($gray, 2);
+         color: $white;
+         font-size: $font-s;
+         font-weight: $font-bold;
      }
  }

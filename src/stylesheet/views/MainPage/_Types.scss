@@ -6,7 +6,7 @@
         align-content: flex-start;
 
         @media (min-width: $breakPoint-mobile) {
-            background-color: $green-first;
+            background-color: nth($gray, 3);
             margin: 0px 10px;
         }
     }
