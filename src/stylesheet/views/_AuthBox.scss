@@ -1,29 +1,382 @@
 .AuthBox {
+    display: grid;
+    justify-items: center;
+    align-items: center;
     width: 100%;
     min-height: 100vh;
     background: $bgcGradient;
     position: relative;
     text-align: center;
 
+
+
     &__wrapper {
-        display: grid;
+        position: relative;
         width: 90%;
         max-width: 700px;
-        min-height: 40vh;
-        max-height: 400px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
+        height: 380px;
         background-color: $white;
         border-radius: 10px;
+        overflow: hidden;
+
+        @media (min-width: $breakPoint-small-mobile) {
+            height: 450px;
+        }
     }
 
     &__header {
         width: 100%;
-        height: 40px;
         margin: 6px 0px 15px 0px;
+        padding: 0px 20px;
         text-align: center;
+
+        &--white {
+            color: $white;
+        }
+    }
+
+    &__link {
+        @media (min-width: $breakPoint-small-mobile) {
+            display: none;
+        }
+    }
+
+    &__item {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0%;
+        padding-top: 20px;
+        transition: transform 0.6s ease-in-out;
+        z-index: 5;
+
+
+        @media (min-width: $breakPoint-small-mobile) {
+            width: 60%;
+            transition: opacity 0.01s 0.75666s ease-in-out;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 4px;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: nth($blue, 2);
+        }
+
+
+        &:nth-of-type(1) {
+            transform: translateX(-40%) rotateY(-90deg);
+
+            @media (min-width: $breakPoint-small-mobile) {
+                left: 40%;
+                transform: translateX(0%) rotateY(0deg);
+                opacity: 0;
+            }
+
+            &::before {
+                background-color: nth($blue, 2);
+            }
+        }
+
+        &:nth-of-type(3) {
+            transform: translateX(40%) rotateY(90deg);
+
+            @media (min-width: $breakPoint-small-mobile) {
+                left: 0%;
+                transform: translateX(0%) rotateY(0deg);
+                opacity: 0;
+            }
+
+            &::before {
+                background-color: nth($red, 2);
+            }
+        }
+
+        &--active {
+            &:nth-of-type(1) {
+                transition: transform 0.6s 0.2s ease-in-out;
+                transform: translateX(0%) rotateY(0deg);
+
+                @media (min-width: $breakPoint-small-mobile) {
+                    transition: opacity 0.1s 0.3s ease-in-out;
+                    opacity: 1;
+                }
+            }
+
+            &:nth-of-type(3) {
+                transition: transform 0.6s 0.2s ease-in-out;
+                transform: translateX(0%) rotateY(0deg);
+
+                @media (min-width: $breakPoint-small-mobile) {
+                    transition: opacity 0.1s 0.3s ease-in-out;
+                    opacity: 1;
+                }
+            }
+        }
+
+    }
+
+    &__bar {
+        display: none;
+        z-index: 6;
+
+        @media (min-width: $breakPoint-small-mobile) {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 40%;
+            height: 100%;
+            left: 0%;
+            top: 0%;
+            background-color: nth($red, 2);
+            font-size: $font-xs;
+            transition: transform 0.6s ease-in-out;
+
+
+
+
+            &:nth-of-type(2) {
+                animation: hideBarLeft 0.6s ease-in-out forwards;
+
+                &>.AuthBox__header {
+                    transform: translateX(-100%);
+                    opacity: 0;
+                }
+
+                .AuthBox__button {
+                    overflow: hidden;
+
+                }
+
+                .AuthBox__button-text {
+                    display: block;
+                    transform: translateX(-120%);
+                }
+            }
+
+
+            &:nth-of-type(4) {
+                animation: hideBarRight 0.6s ease-in-out forwards;
+
+                &>.AuthBox__header {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+
+                .AuthBox__button {
+                    overflow: hidden;
+                }
+
+                .AuthBox__button-text {
+                    display: block;
+                    transform: translateX(120%);
+                }
+            }
+        }
+
+        &--active {
+            &:nth-of-type(4) {
+                animation: appearActiveBarFromLeft 0.9s linear both;
+
+                &>.AuthBox__header {
+                    animation: appearElement 0.4s 0.6s linear both;
+                }
+
+                .AuthBox__button-text {
+                    animation: appearElement 0.2s 0.9s linear both;
+                }
+            }
+
+            &:nth-of-type(2) {
+                animation: appearActiveBarFromRight 0.9s linear both;
+
+                &>.AuthBox__header {
+                    animation: appearElement 0.4s 0.6s linear both;
+                }
+
+                .AuthBox__button-text {
+                    animation: appearElement 0.2s 0.9s linear both;
+                }
+            }
+        }
+
+        &--blue {
+            background-color: nth($blue, 3);
+        }
+    }
+
+    &__figures {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        bottom: 0%;
+        z-index: 10;
+        pointer-events: none;
+
+        div {
+            position: absolute;
+        }
+
+        div:nth-of-type(1) {
+            top: 4%;
+            left: -8%;
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            opacity: 0.2;
+            border-radius: 50%;
+        }
+
+        div:nth-of-type(2) {
+            bottom: 0%;
+            left: 50%;
+            width: 60px;
+            height: 250px;
+            background-color: white;
+            opacity: 0.1;
+            transform: rotate(75deg) translate(170%);
+        }
+
+        div:nth-of-type(3) {
+            top: 2%;
+            right: 5%;
+            border-top: 80px solid rgba(255, 255, 255, 0.925);
+            border-right: 40px solid transparent;
+            border-left: 40px solid transparent;
+            opacity: 0.3;
+            transform: rotate(35deg);
+        }
+
+        div:nth-of-type(4) {
+            top: 20%;
+            left: 40%;
+            width: 70px;
+            height: 70px;
+            background-color: white;
+            opacity: 0.1;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        div:nth-of-type(5) {
+            bottom: 0%;
+            left: 0%;
+            width: 170px;
+            height: 170px;
+            background-color: white;
+            opacity: 0.1;
+            transform: translate(-50%, 50%) rotate(45deg);
+        }
+    }
+}
+
+
+
+@keyframes appearActiveBarFromRight {
+    0% {
+        transform: translateX(150%);
+    }
+
+    20% {
+        transform: translateX(calc(150% * 0.8)) scaleX(1.4);
+    }
+
+    60% {
+        transform: translateX(calc(150% * 0.4)) scaleX(1.4);
+    }
+
+    80% {
+        transform: translateX(calc(150% * 0.2)) scaleX(1.2);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes appearActiveBarFromLeft {
+    0% {
+        transform: translateX(0%);
+    }
+
+    20% {
+        transform: translateX(calc(150% * 0.2)) scaleX(1.4);
+    }
+
+    60% {
+        transform: translateX(calc(150% * 0.6)) scaleX(1.4);
+    }
+
+    80% {
+        transform: translateX(calc(150% * 0.8)) scaleX(1.2);
+    }
+
+    100% {
+        transform: translateX(150%);
+    }
+}
+
+@keyframes hideBarRight {
+    0% {
+        transform: translateX(150%);
+        z-index: 7;
+    }
+
+    99.999% {
+        transform: translateX(251%);
+        z-index: 7;
+    }
+
+    100% {
+        transform: translateX(0%) scaleX(0);
+        z-index: 1;
+    }
+}
+
+@keyframes hideBarLeft {
+    0% {
+        transform: translateX(0%);
+        z-index: 7;
+    }
+
+    99.999% {
+        transform: translateX(-151%);
+        z-index: 7;
+    }
+
+    100% {
+        transform: translateX(251%) scaleX(0);
+        z-index: 1;
+    }
+}
+
+
+@keyframes appearElement {
+    100% {
+        transform: translate(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes hideElementRight {
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes hideElementLeft {
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
     }
 }
