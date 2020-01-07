@@ -11,8 +11,8 @@ import Error from 'config/ErrorStatements';
 import { Helmet } from 'components/organisms';
 import { Statement } from 'components/atoms';
 import AuthLayout from 'layouts/AuthLayout';
-import SignIn from './SignIn';
-import SignUp from './SignUp';
+
+import { SignIn, SignUp, BackgroundBlocks } from 'components/AuthPage';
 
 const AuthPage = props => {
   const [pageType, setPageType] = useState(window.location.pathname);
@@ -83,13 +83,7 @@ const AuthPage = props => {
               handleSubmit={handleSubmit}
               tooglePage={handleTogglePage}
             />
-            <div className="AuthBox__figures">
-              <div />
-              <div />
-              <div />
-              <div />
-              <div />
-            </div>
+            <BackgroundBlocks />
           </div>
         </div>
       </AuthLayout>

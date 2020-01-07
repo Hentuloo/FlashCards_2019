@@ -24,7 +24,7 @@ export const editType = (id, title, icon) => dispatch => {
     type: REQUEST,
   });
   return axios
-    .post('/cards/api/updateType', { id, title, icon })
+    .put('/types/update', { id, title, icon })
     .then(() =>
       dispatch({
         type: EDIT_TYPE_SUCCESS,
@@ -45,7 +45,7 @@ export const deleteType = id => dispatch => {
     type: REQUEST,
   });
   return axios
-    .delete('/cards/api/deleteType', { data: { id } })
+    .delete('/types/delete', { data: { id } })
     .then(() =>
       dispatch({
         type: DELETE_TYPE_SUCCESS,
@@ -64,7 +64,7 @@ export const addType = (title, icon) => dispatch => {
     type: REQUEST,
   });
   return axios
-    .post('/cards/api/newType', { title, icon })
+    .post('/types/new', { title, icon })
     .then(res =>
       dispatch({
         type: ADD_TYPE_SUCCESS,
@@ -84,7 +84,7 @@ export const fetchTypes = () => dispatch => {
     type: REQUEST,
   });
   return axios
-    .get('/cards/api/types')
+    .get('/types/types')
     .then(res => {
       dispatch({
         type: FETCH_TYPES_SUCCESS,
@@ -106,7 +106,7 @@ export const changeActive = id => dispatch => {
     type: REQUEST,
   });
   return axios
-    .get('/cards/api/oneType', {
+    .get('/types/type', {
       params: {
         id,
       },

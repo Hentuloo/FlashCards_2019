@@ -16,7 +16,7 @@ export const loginUser = (email, password) => dispatch => {
     type: REQUEST,
   });
   return axios
-    .post('/user/api/login', {
+    .post('/auth/login', {
       email,
       password,
     })
@@ -46,7 +46,7 @@ export const authenticate = (email, password) => dispatch => {
     type: REQUEST,
   });
   return axios
-    .post('/user/api/new', {
+    .post('/auth/new', {
       email,
       password,
     })
@@ -73,7 +73,7 @@ export const deleteUser = email => dispatch => {
     type: REQUEST,
   });
   return axios
-    .delete('/user/api/delete', { data: { email } })
+    .delete('/auth/delete', { data: { email } })
     .then(() => {
       localStorage.removeItem('flashCardsToken');
       history.push(Constants.PATHS.signup);

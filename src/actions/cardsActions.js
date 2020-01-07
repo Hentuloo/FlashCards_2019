@@ -13,7 +13,7 @@ export const addWords = (idType, cards) => dispatch => {
   });
 
   return axios
-    .post('/cards/api/newCards', { idType, cards })
+    .post('/cards/new', { idType, cards })
     .then(res =>
       dispatch({
         type: ADD_WORDS_SUCCESS,
@@ -33,7 +33,7 @@ export const deleteWord = (idType, idWord) => dispatch => {
   });
 
   return axios
-    .delete('/cards/api/deleteCard', { data: { idType, idWord } })
+    .delete('/cards/one', { data: { idType, idWord } })
     .then(() =>
       dispatch({
         type: DELETE_WORDS_SUCCESS,

@@ -5,7 +5,7 @@ import withAuth from 'hoc/withAuth';
 import history from 'config/history';
 
 import MainPage from 'views/MainPage';
-import AuthPage from 'views/AuthPage/AuthPage';
+import AuthPage from 'views/AuthPage';
 import SettingsPage from 'views/SettingsPage';
 
 import Constants from 'config/Constants';
