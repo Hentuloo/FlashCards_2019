@@ -106,10 +106,8 @@ export const changeActive = id => dispatch => {
     type: REQUEST,
   });
   return axios
-    .get('/types/type', {
-      params: {
-        id,
-      },
+    .post('/types/type', {
+      id,
     })
     .then(res =>
       dispatch({
