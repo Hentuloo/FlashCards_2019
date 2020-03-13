@@ -24,10 +24,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && echo '/* /index.html  200' | cat >build/_redirects ",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-css": "node-sass src/ -o src/ --include-path src/"
+    "deploy": "aws s3 cp build/ s3://aws-circle-ci --recursive"
   },
   "browserslist": {
     "production": [
