@@ -1,6 +1,6 @@
 # FlashCards
 
-Live: https://megafiszka.eu
+Live: http://flashcards-app123.s3-website.eu-central-1.amazonaws.com
 Back-end(git): https://github.com/Hentuloo/FlashCards-Backend_2019
 
 > React application to learn english. There's a authorization page using JWT. You can create new types/section of words and then adds own words to learn. There's a possibility to draw random card(word and description) and table to study each card.
